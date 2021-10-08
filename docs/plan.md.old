@@ -1,0 +1,72 @@
+## HTML / CSS
+
+1. HTML et CSS - Les Bases
+	1. Le rôle du navigateur
+	2. Les balises HTMLs et leurs attributs
+	3. Titres, paragraphes et listes
+	4. Les images
+	5. Les liens hypertextes
+	6. TP: Présentation d'une personne
+	7. Les feuilles de styles CSS
+	8. Les sélecteurs et les propriétés CSS
+	9. Dimensions et centrage
+	10. Formatage du texte
+	11. Espacement
+	12. Héritage et cascade des propriétés
+	13. Les fonds
+	14. TP: Mettre en page la présentation
+	15.  Bonus: Les validateurs W3C
+2. Structurer les pages HTML / CSS
+	1. Les balises structurantes
+	2. Le modèle des boîtes
+	3. Bordures et ombres
+	4. Agencement des éléments
+	5. Flexbox
+	6. TP: Le site de présentation de groupe
+	7. Les Media Queries
+	8. Les sélecteurs de pseudo-classes
+	9. Les animations CSS (bases)
+	10. TP: Adapter la présentation en responsive web design
+	11. Bonus: Déployer son site
+3. HTML / CSS intermédiaire
+	1. La video
+	2. L'audio
+	3. Les tableaux
+	4. Sélecteurs de descendants CSS
+	5. Priorité des règles CSS
+	6. Positionement
+	7. TP: Le tutoriel video
+	8. Bonus: La grille CSS
+	10. Bonus: CSS Dinner
+4. Intégrer une maquette
+	1. Figma
+	2. Découpage d'une maquette
+	3. TP: Intégration d'une maquette web
+	4. Bonus: L'extension Emmet
+	5. Bonus: CodePen Challenges
+5. Accesibilité et référencement
+	1. Les normes WCAG
+	2. Lecteurs d'écrans et navigation au clavier
+	3. Accessibilité du design
+	4. ARIA
+	5. WAVE tool
+	6. TP: optimiser l'accessibilité du site de présentation
+	7. Les méta-données
+	8. L'emphase et les mots-clés
+	9. Les liens et les sitemaps
+	10. Google LightHouse
+	11. TP: optimiser le site de présentation pour le référencement
+	12. Bonus: Ecrire en markdown et générer du HTML
+
+### HTML / CSS intermédiaire
+	1. La video
+	2. L'audio
+	3. Les tableaux
+	4. Sélecteurs de descendants CSS
+	5. Priorité des règles CSS
+	6. Positionement
+	7. TP: Le tutoriel video
+	8. Bonus: La grille CSS
+	10. Bonus: CSS Dinner
+
+### Intégrer une maquette
