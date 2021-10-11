@@ -133,7 +133,7 @@ Notes:
 			">
 	</iframe>
 
-## Récapituatif
+## Récapitulatif
 
 ```html
 <h1>Les titres de premier niveau</h1>
