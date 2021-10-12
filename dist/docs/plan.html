@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>reveal-md</title>
+    <link rel="shortcut icon" href="./../favicon.ico"/>
+    <link rel="stylesheet" href="./../dist/reveal.css" />
+    <link rel="stylesheet" href="./../dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./../css/highlight/zenburn.css" />
+    <link rel="stylesheet" href="./../_assets/assets/css/quiz.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template"># HTML, CSS et Javascript pour dévelopeurs web débutants
+</script></section><section data-markdown><script type="text/template">## HTML / CSS
+
+- [HTML et CSS - Les Bases](src/html-css-bases.md)
+- [HTML et CSS - Structure et Mise en page](src/html-css-structure.md)
+- [HTML et CSS - Aller plus loin](src/html-css-more.md)
+- [Intégrer une maquette](src/html-css-integration.md)
+- [Accesibilité et référencement](src/html-css-a11y-seo.md)
+</script></section><section data-markdown><script type="text/template">## Javascript
+</script></section><section data-markdown><script type="text/template">### Découverte de javascript
+	1. La console du navigateur
+	3. Les variables, constantes et types de données
+	4. Les opérations mathématiques
+	5. Les conditions
+	6. Les boucles
+	7. TP: Le nombre magique / Chifoumi
+	8. Les fonctions
+	9. Les objets
+	10. Les tableaux
+	11. Les fonctions de rappel
+	12. TP: Mastermind / La bataille navale
+	13. Bonus: CodingGame
+</script></section><section data-markdown><script type="text/template">### Javascript et le DOM
+	1. Lier un script Javascript à une page HTML
+	2. Comprendre le DOM
+	3. Sélectionner et modifier un élément du DOM
+	4. Ajouter et enlever des noeuds au DOM
+	5. TP: C'est la fête
+	6. Ecouter les événements
+	9. TP: La calculatrice
+	10. Bonus: Le BOM
+	</script></section><section data-markdown><script type="text/template">### Manipulation des formulaires
+	1. Propagation des événements à travers le DOM
+	2. Bloquer le comportement HTML par défaut
+	3. TP: La To-Do list
+	4. Bonus: Stocker des données dans le navigateur
+	</script></section><section data-markdown><script type="text/template">### Projet: Javascript pour le web
+	1. Plus d'évènements: touches clavier, défilement...
+	3. TP: Carousel / Editeur de texte / Lecteur Audio / Lecteur Vidéo
+	</script></section><section data-markdown><script type="text/template">### L'API canvas
+	1. Bonus: P5.js
+	</script></section><section data-markdown><script type="text/template">### Comprendre les objets Javascript
+	1. L'héritage des prototypes
+	2. Créations d'instances
+	3. Classes personnalisées
+	</script></section><section data-markdown><script type="text/template">### La portée des variables et le contexte</script></section><section data-markdown><script type="text/template">### Javascript asynchrone
+</script></section><section data-markdown><script type="text/template">## Ressources utiles
+
+- [Web Design in 4 minutes](https://jgthms.com/web-design-in-4-minutes/)
+- [CSS Dinner](https://flukeout.github.io/)
+- [Flexbox Froggy](https://flexboxfroggy.com/#fr)</script></section></section></div>
+    </div>
+
+    <script src="./../dist/reveal.js"></script>
+
+    <script src="./../plugin/markdown/markdown.js"></script>
+    <script src="./../plugin/highlight/highlight.js"></script>
+    <script src="./../plugin/zoom/zoom.js"></script>
+    <script src="./../plugin/notes/notes.js"></script>
+    <script src="./../plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"title":"Comprendre le web","transition":"slide","progress":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

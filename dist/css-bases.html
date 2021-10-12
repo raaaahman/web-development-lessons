@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>reveal-md</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+    <link rel="stylesheet" href="./_assets/assets/css/quiz.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template"># CSS - Les bases
+</script></section><section data-markdown><script type="text/template">## Quésaco?
+
+![Une licorne, un arc-en-ciel, une cascade.](assets/images/unicorn.jpg)
+
+Cascading Style Sheet = Feuilles de Styles en Cascade
+</script></section><section data-markdown><script type="text/template">## L'attribut style
+
+```html
+<h1 style="color: gold;">Bob l'éponge</h1>
+```
+
+<iframe srcdoc="<h1 style='color: gold;'>Bob l'éponge</h1>"></iframe>
+</script></section><section data-markdown><script type="text/template">## La balise style
+
+```html [2-6]
+<head>
+	<style>
+		h1 {
+			color: gold;
+		}
+	</style>
+</head>
+<body>
+	<h1>Bob l'éponge</h1>
+</body>
+```
+
+<iframe srcdoc="<head>
+	<style>
+		h1 {
+			color: gold;
+		}
+	</style>
+</head>
+<body>
+	<h1>Bob l'éponge</h1>
+</body>">
+</iframe>
+</script></section><section data-markdown><script type="text/template">## Anatomie d'une règle CSS
+
+![Une règle css, composée d'un sélecteur, une propriété et une valeur.](assets/images/css-rules.png)
+
+<aside class="notes"><p>Cette règle s&#39;applique à tous les éléments de type titre de niveau 1 (&quot;h1&quot;).</p>
+</aside></script></section><section data-markdown><script type="text/template">## La feuille de style externe
+
+```html [2]
+<head>
+	<link rel="stylesheet" href="style.css"/>
+</head>
+```
+
+![La feuille de style est située dans le même dossier que la page web](assets/images/relative-path_stylesheet.png)
+</script></section><section data-markdown><script type="text/template">## Les couleurs
+
+Mot-clé:
+
+```css
+h1 {
+	color: gold;
+}
+```
+
+Liste des couleurs: [https://developer.mozilla.org/en-US/docs/Web/CSS/color_value](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
+</script></section><section data-markdown><script type="text/template">### Valeurs RGB (Red, Green, Blue):
+
+```css
+p {
+	color: rgb(32, 32, 128);
+}
+```
+
+![Composition des couleurs par addition des couches rouge verte et bleue.](assets/images/rgb-pixel.png)
+</script></section><section data-markdown><script type="text/template">### Code hexadecimal:
+
+```css
+body {
+	background-color: #f2f2f2;
+}
+```
+
+![Chaque ensemble de deux lettres représente la proportion d'une couleur](assets/images/color-hex.png)
+
+0, 1, 2, 3, ..., 9, *a, b, c, d, e, f,* 10, 11, 12, ..., *1a, 1b,* ...
+</script></section><section data-markdown><script type="text/template">## 
+
+<iframe style="overflow: visible; width: 100%; height: 60vh;" 
+		srcdoc="
+				<head>
+					<style>
+						body {
+								background-color: #c4c4c4;
+							}
+							h1 {
+								color: gold;
+							}
+							p {
+								color: rgb(32, 32, 128);
+							}
+					</style>
+				</head>
+				<body>
+					<img src=http://www.photoshoptuto.com/wp-content/ressources/crop/bob-eponge.jpg />
+					<h1>Bob l'éponge</h1>
+					<p>Cuisinier souriant</p>
+					<h2>Sa vie</h2>
+					<ul>
+						<li>Habite à <strong>Bikini Bottom</strong></li>
+						<li>Travaille au <strong>Crabe Croustillant</strong></li>
+					</ul>
+					<h2>Son oeuvre</h2>
+					<ol>
+						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film target=_blank>Bob l'éponge, le film</a></li>
+						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_Un_h%C3%A9ros_sort_de_l%27eau  target=_blank>Un héros sort de l'eau</a></li>
+						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_%C3%89ponge_en_eaux_troubles  target=_blank>Eponge en eaux troubles</a></li>
+					</ol>
+				</body>
+			">
+	</iframe>
+	</script></section><section data-markdown><script type="text/template">### Sélecteurs de couleur
+
+![Le site colorpicker.me](assets/images/colorpicker.png)
+
+[https://colorpicker.me/](https://colorpicker.me/)
+</script></section><section data-markdown><script type="text/template">## La cascade
+
+```css
+body {
+	color: rgb(32, 32, 128);
+}
+```
+
+![Les propriétés du body ruissellent dans ses éléments enfants](assets/images/cascading.png)
+</script></section><section data-markdown><script type="text/template">##
+
+<iframe style="overflow: visible; width: 100%; height: 60vh;" 
+		srcdoc="
+				<head>
+					<style>
+						body {
+							background-color: #c4c4c4;
+							color: rgb(32, 32, 128);
+						}
+					</style>
+				</head>
+				<body>
+					<img src=http://www.photoshoptuto.com/wp-content/ressources/crop/bob-eponge.jpg />
+					<h1>Bob l'éponge</h1>
+					<p>Cuisinier souriant</p>
+					<h2>Sa vie</h2>
+					<ul>
+						<li>Habite à <strong>Bikini Bottom</strong></li>
+						<li>Travaille au <strong>Crabe Croustillant</strong></li>
+					</ul>
+					<h2>Son oeuvre</h2>
+					<ol>
+						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film target=_blank>Bob l'éponge, le film</a></li>
+						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_Un_h%C3%A9ros_sort_de_l%27eau  target=_blank>Un héros sort de l'eau</a></li>
+						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_%C3%89ponge_en_eaux_troubles  target=_blank>Eponge en eaux troubles</a></li>
+					</ol>
+				</body>
+			">
+	</iframe>
+	</script></section><section data-markdown><script type="text/template">## La surcharge
+
+```css [5-7]
+body {
+	background-color: #c4c4c4;
+	color: rgb(32, 32, 128);
+}
+h1 {
+	color: gold;
+}
+```
+
+![La règle sur l'élément h1 surcharge la règle sur le body](assets/images/css-overwrite.png)
+</script></section><section data-markdown><script type="text/template">##
+
+<iframe style="overflow: visible; width: 100%; height: 60vh;" 
+		srcdoc="
+				<head>
+					<style>
+						body {
+							background-color: #c4c4c4;
+							color: rgb(32, 32, 128);
+						}
+						h1 {
+							color: gold;
+						}
+					</style>
+				</head>
+				<body>
+					<img src=http://www.photoshoptuto.com/wp-content/ressources/crop/bob-eponge.jpg />
+					<h1>Bob l'éponge</h1>
+					<p>Cuisinier souriant</p>
+					<h2>Sa vie</h2>
+					<ul>
+						<li>Habite à <strong>Bikini Bottom</strong></li>
+						<li>Travaille au <strong>Crabe Croustillant</strong></li>
+					</ul>
+					<h2>Son oeuvre</h2>
+					<ol>
+						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film target=_blank>Bob l'éponge, le film</a></li>
+						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_Un_h%C3%A9ros_sort_de_l%27eau  target=_blank>Un héros sort de l'eau</a></li>
+						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_%C3%89ponge_en_eaux_troubles  target=_blank>Eponge en eaux troubles</a></li>
+					</ol>
+				</body>
+			">
+	</iframe>
+	</script></section><section data-markdown><script type="text/template">## Les polices
+
+```css
+body {
+	font-family: sans-serif;
+}
+```
+
+
+</script></section><section data-markdown><script type="text/template">### Familles
+
+- **serif** (à empattement)
+- **sans-serif** (sans empattement)
+- **monospace** (espacement régulier)
+- **cursive** (imitation écriture manuelle)
+- **fantasy** (écriture décorative)
+ </script></section><section data-markdown><script type="text/template">### Polices "Web safe"
+
+~ Disponibles sur les navigateurs. Exemples:
+
+- Arial (sans-serif)
+- Times New Roman (serif)
+- Courier New (monospace)
+- Brush Script MT (cursive)
+
+Liste: [https://www.w3schools.com/cssref/css_websafe_fonts.asp](https://www.w3schools.com/cssref/css_websafe_fonts.asp)
+</script></section><section data-markdown><script type="text/template">### Ajouter des polices
+
+```css
+@font-face {
+	font-family: "The Brooklyn";
+	src: url("fonts/The Brooklyn.otf") format("otf");
+}
+
+h1 {
+	font-family: "The Brooklyn";
+}
+```
+</script></section><section data-markdown><script type="text/template">### Valeurs de remplacement
+
+```css
+h1 {
+	font-family: "The Brooklyn", Arial, sans-serif;
+}
+```
+
+*The Brooklyn* si disponible, sinon *Arial* si disponible, sinon la police sans-serif par défaut.
+</script></section><section data-markdown><script type="text/template">## Les dimensions
+</script></section><section data-markdown><script type="text/template">## Les fonds
+</script></section><section data-markdown><script type="text/template">## Validateur W3C
+</script></section></section><section ><section data-markdown><script type="text/template">
+# CSS - La mise en page
+</script></section><section data-markdown><script type="text/template">## Sélecteur de classes
+
+```html
+<div class="container">
+	<!-- ... -->
+</div>
+```
+
+```css
+.container {
+	
+}
+```
+</script></section><section data-markdown><script type="text/template">## Centrage
+</script></section><section data-markdown><script type="text/template">## Espacement
+</script></section><section data-markdown><script type="text/template">## Modèle de boîte
+</script></section><section data-markdown><script type="text/template">## TP: Mettre en page la présentation
+</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"title":"Comprendre le web","transition":"slide","progress":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

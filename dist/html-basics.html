@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>reveal-md</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+    <link rel="stylesheet" href="./_assets/assets/css/quiz.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template"># HTML
+
+Sylvain Schellenberger
+
+Octobre 2021
+</script></section><section data-markdown><script type="text/template">## Quésaco?
+
+![Du code HTML](assets/images/html.jpeg)
+
+**H**yper**T**ext **M**ark up **L**anguage ~= Language de balises hypertextes
+
+<aside class="notes"><p>Les pages html sont reliées entre elles par des <strong>liens hypertextes</strong> (ou hyperliens)</p>
+<p>La syntaxe des documents HTMLs est consituté de <strong>balises</strong></p>
+<p>HTML est un <strong>language de description</strong> de documents</p>
+</aside></script></section><section data-markdown><script type="text/template">## Les éléments HTML
+
+```html
+<p>Cuisinier souriant</p>
+```
+
+<iframe style="background-color: #fff; overflow: visible" srcdoc="<p>Cuisinier Souriant</p>" style="background-color: #fff;">
+</iframe>
+
+<aside class="notes"><p>Le navigateur interprète les balises et affiche uniquement le contenu.</p>
+</aside></script></section><section data-markdown><script type="text/template">## Les balises
+
+- `<p>`: Une **balise ouvrante**
+- `Cusinier souriant`: Un **contenu** (ici, du texte) 
+- `</p>`: Une **balise fermante**
+</script></section><section data-markdown><script type="text/template">## Les titres
+
+```html
+<h1>Bob l'éponge</h1>
+<h2>Sa vie</h2>
+<h2>Son oeuvre</h2>
+```
+
+<iframe style="background-color: #fff; overflow: visible; min-height: 20vh;" srcdoc="<h1>Bob l'éponge</h1>
+<h2>Sa vie</h2>
+<h2>Son oeuvre</h2>">
+</iframe>
+
+<aside class="notes"><p>Les titres donnent une indication sur le contenu de la page.</p>
+</aside></script></section><section data-markdown><script type="text/template">## Imbriquer les éléments
+
+![Les éléments s'imbriquent les uns dans les autres](assets/images/nested-html.png)
+
+```html
+<ul>
+	<li>Habite à Bikini Bottom</li>
+	<li>Travaille au Crabe Croustillant</li>
+</ul>
+```
+
+<aside class="notes"><p>La dernière balise ouverte est la première fermée.</p>
+</aside></script></section><section data-markdown><script type="text/template">## Mélanger texte et éléments
+
+```html
+<ul>
+	<li>Habite à <strong>Bikini Bottom</strong></li>
+	<li>Travaille au <strong>Crabe Croustillant</strong></li>
+</ul>
+```
+
+<iframe style="background-color: #fff; overflow: visible;" srcdoc="<ul>
+	<li>Habite à <strong>Bikini Bottom</strong></li>
+	<li>Travaille au <strong>Crabe Croustillant</strong></li>
+</ul>">
+</iframe>
+</script></section><section data-markdown><script type="text/template">## Les attributs HTML
+
+```html [1]
+<a href="https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film">
+	Bob l'éponge, le film
+</a>
+```
+
+<iframe style="background-color: #fff; overflow: visible;" srcdoc="<a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_Un_h%C3%A9ros_sort_de_l%27eau target=_blank>
+	Bob l'éponge, le film
+</a>">
+</iframe>
+
+<aside class="notes"><ul>
+<li>On renseigne une <strong>adresse URL</strong> dans l&#39;attribut <code>href</code></li>
+<li>L&#39;attribut <code>target</code> défini où est ouverte la nouvelle page</li>
+</ul>
+</aside></script></section><section data-markdown><script type="text/template">## Les balises auto-fermantes
+
+```html [4]
+<img 
+  src="http://www.photoshoptuto.com/wp-content/ressources/crop/bob-eponge.jpg"
+  alt="Bob l'éponge"
+/>
+```
+
+<iframe style="background-color: #fff; overflow: visible;" srcdoc="<img src=https://www.art-deco-stickers.fr/17466-medium_default/stickers-bob-l-eponge.jpg alt=Bob\ l'éponge>">
+</iframe>
+
+<aside class="notes"><ul>
+<li>On peut écrire un <code>/</code> avant le dernier chevron (mais ce n&#39;est pas obligatoire).</li>
+<li>On donne l&#39;<strong>adresse URL</strong> où se situe l&#39;image à l&#39;attribut <code>src</code></li>
+<li><code>alt</code> décrit l&#39;image pour les personnes non-voyantes</li>
+</ul>
+</aside></script></section><section data-markdown><script type="text/template">## Résultat
+
+<iframe style="background-color: #fff; overflow: visible; width: 100%; height: 60vh;" 
+		srcdoc="
+				<img src=http://www.photoshoptuto.com/wp-content/ressources/crop/bob-eponge.jpg />
+				<h1>Bob l'éponge</h1>
+				<p>Cuisinier souriant</p>
+				<h2>Sa vie</h2>
+				<ul>
+					<li>Habite à <strong>Bikini Bottom</strong></li>
+					<li>Travaille au <strong>Crabe Croustillant</strong></li>
+				</ul>
+				<h2>Son oeuvre</h2>
+				<ol>
+					<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film target=_blank>Bob l'éponge, le film</a></li>
+					<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_Un_h%C3%A9ros_sort_de_l%27eau  target=_blank>Un héros sort de l'eau</a></li>
+					<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_%C3%89ponge_en_eaux_troubles  target=_blank>Eponge en eaux troubles</a></li>
+				</ol>
+			">
+	</iframe>
+</script></section><section data-markdown><script type="text/template">## Récapitulatif
+
+```html
+<h1>Les titres de premier niveau</h1>
+<h2>Les titres de second niveau</h2>
+<p>Les paragraphes</p>
+<ul>Les listes non ordonnées
+	<li>Les éléments de liste</li>
+</ul>
+<ol>
+	Les listes ordonnées
+	<li>Les éléments de listes</li>
+</ol>
+<a href="https://la-cible.fr">Les liens hypertextes</a>
+<img src="https://beautiful.jpg" alt="Les images"/>
+```
+
+Mozilla Developer's Network - la référence HTML : [https://developer.mozilla.org/fr/docs/Web/HTML](https://developer.mozilla.org/fr/docs/Web/HTML)
+</script></section><section data-markdown><script type="text/template">## TP: La carte de visite
+
+- Choisir une personne, une célébrité, un personnage de fiction, etc. à présenter.
+- Aller sur [https://https://codepen.io/](https://codepen.io/) et cliquer sur "Start Coding"
+- Créer sa carte de visite en HTML
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Bien former ses pages HTML
+</script></section><section data-markdown><script type="text/template">## Utiliser un éditeur de texte
+
+![La même page HTML passée à l'éditeur de texte et au navigateur ne produit pas le même résultat](assets/images/editor-browser.png)
+</script></section><section data-markdown><script type="text/template">##
+
+Visual Studio Code / Sublime Text = Editeur de texte =/= Traitement de texte = Word
+
+[Document texte](assets/examples/richtext.docx)
+
+- Sublime Text: [https://www.sublimetext.com/download](https://www.sublimetext.com/download)
+- Visual Studio Code: [https://code.visualstudio.com/#alt-downloads](https://code.visualstudio.com/#alt-downloads)
+</script></section><section data-markdown><script type="text/template">## Le document HTML
+
+```html
+<!DOCTYPE html>
+```
+
+En **première ligne** du document.
+
+<aside class="notes"><p>On déclare que l&#39;on va écrire du HTML.</p>
+</aside></script></section><section data-markdown><script type="text/template">## La balise html
+
+```html [2,4]
+<!DOCTYPE html>
+<html lang="fr">
+
+</html>
+```
+
+Englobe tout.
+
+<aside class="notes"><p>L&#39;attribut &quot;lang&quot; aide le navigateur à identifier la langue de la page.</p>
+</aside></script></section><section data-markdown><script type="text/template">## L'en-tête du document
+
+```html [2-4]
+<html lang="fr">
+	<head>
+		<title>Bob l'éponge</title>
+	</head>
+</html>
+```
+
+Contient les informations destiné au **navigateur**.
+
+<aside class="notes"><p>La balise <code>title</code> indique le titre de la page, qui s&#39;affiche dans l&#39;onglet du navigateur.</p>
+</aside></script></section><section data-markdown><script type="text/template">## Les balises meta
+
+```html [2]
+<head>
+	<meta charset="utf-8"/>
+</head>
+```
+
+<aside class="notes"><p><code>charset</code> défini le <strong>jeu de caractères</strong> utilisé dans le document</p>
+<p>Les balises <code>meta</code> sont auto-fermantes: tout se passe dans leurs attributs.</p>
+</aside></script></section><section data-markdown><script type="text/template">## Le corps du document 
+
+```html [6-8]
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bob l'éponge</title>
+	</head>
+	<body>
+		<h1>Bob l'éponge</h1>
+	</body>
+</html>
+```
+
+Contient les informations destinées aux lecteurs de la page.
+</script></section><section data-markdown><script type="text/template">## Valider son HTML
+
+Le World Wide Web Consortium (W3C) est l'organisme en charge de la rédaction des standards du web, notamment les URLS, HTML et CSS.
+
+Validateur HTML: [https://validator.w3.org](/https://validator.w3.org/)
+</script></section><section data-markdown><script type="text/template">## TP: La carte de visite (partie 2)
+
+- Ecrire un document HTML
+- Récupérer le code HTML du premier TP et le copier dans le body
+- Passer le code au validateur HTML et corriger les erreurs
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Précisions sur le HTML
+</script></section><section data-markdown><script type="text/template">## Les balises meta
+
+```html [6]
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Allo? Cinoche!</title>
+		<meta charset="utf-8"/>
+		<meta name="description" content="Liste des films diffusés en salles (ou pas)..."/>
+	</head>
+</html>
+```
+
+![La description du site AlloCiné apparaît dans les résultats de recherche Google.](assets/images/meta-description.png)
+</script></section><section data-markdown><script type="text/template">## L'inspecteur (Navigateur)
+
+Firefox & Chrome: *Clic droit > 'Inspecter'* OU *Ctrl/Cmd + Maj + I* 
+
+![L'inspecteur du navigateur permet de visualiser le code source de la page HTML.](assets/images/inspector.png)
+</script></section><section data-markdown><script type="text/template">## Les commentaires
+
+```html
+<html lang="fr">
+	<body>
+		<!--Liste des films-->
+		<h2>Les films</h2>
+	<body>
+</html>
+```
+
+<iframe srcdoc="<html lang=fr>
+	<body>
+		<!--Liste des films-->
+		<h2>Les films</h2>
+	<body>
+</html>"></iframe>
+</script></section><section data-markdown><script type="text/template">## Les divisions
+
+```html
+<html>
+	<!-- ... -->
+	<body>
+		<h1>Allo? Cinoche!</h1>
+		
+		<!--Liste des films-->
+		<div>
+			<h2>Les Films</h2>
+		</div>
+		
+		<!--Liste des acteurs-->
+		<div>
+			<h2>Les Acteurs</h2>
+		<div>
+	</body>
+</html>
+```
+
+<iframe srcdoc="<h1>Allo? Cinoche!</h1>
+		<!--Liste des films-->
+		<div>
+			<h2>Les Films</h2>
+		</div>
+		<!--Liste des acteurs-->
+		<div>
+			<h2>Les Acteurs</h2>
+		<div>">
+</iframe>
+</script></section><section data-markdown><script type="text/template">## Descendance
+
+```html
+<ul>
+	<li>The Avengers: Endgame</li>
+	<li>Les Animaux Fantastiques: Les crimes de Grindelwald</li>
+	<li>Bob l'éponge: le film</li>
+</ul>
+```
+
+![Les éléments li sont les enfants de l'élément ul, qui est leur parent](assets/images/html-descendance.png)
+</script></section><section data-markdown><script type="text/template">## Descendance (plusieurs niveaux)
+
+```html
+<ul>
+	<li>
+		<h3>The Avengers: Endgame</h3>
+		<h4>Acteurs:</h4>
+		<ul>
+			<li>Robert Downey Jr.</li>
+			<li>Chris Evans</li>
+			<li>Scarlett Johansson</li>
+		</ul>
+	</li>
+	<!-- ... -->
+</ul>
+```
+
+![Les éléments enfants des enfants sont appelés descendants, tandis que les éléments parents des parents sont appelés ancêtres.](assets/images/html-descendance-2.png)
+</script></section><section data-markdown><script type="text/template">## Les chemins absolus (distants)
+
+```html
+<img src="https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg">
+```
+
+![Le site envoie une requête HTTP vers le serveur où est hébergée l'image qu'il veut afficher.](assets/images/distant-link.png)
+</script></section><section data-markdown><script type="text/template">## Les chemins absolus (locaux)
+
+```html
+<img src="/images/Avengers_Endgame.jpg">
+```
+
+![L'image est recherchée depuis la racine du site, c'est-à-dire, le serveur.](assets/images/absolute-path.png)
+</script></section><section data-markdown><script type="text/template">## Les chemins relatifs
+
+```html
+<img src="images/Avengers_Endgame.png">
+```
+
+![L'image est recherchée depuis le dossier de la page actuelle.](assets/images/relative-path.png)
+</script></section><section data-markdown><script type="text/template">## Les ancres
+
+```html
+<div id="films">
+	<h2>Les films</h2>
+</div>
+
+<a href="#">Accueil</a>
+<a href="#films">Les films</a>
+```</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"title":"Comprendre le web","transition":"slide","progress":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
