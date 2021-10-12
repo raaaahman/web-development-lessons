@@ -2,7 +2,7 @@
 
 ## Quésaco?
 
-![Une licorne, un arc-en-ciel, une cascade.](assets/images/unicorn.jpg)
+![Une licorne, un arc-en-ciel, une cascade.](../assets/images/unicorn.jpg)
 
 Cascading Style Sheet = Feuilles de Styles en Cascade
 
@@ -43,7 +43,7 @@ Cascading Style Sheet = Feuilles de Styles en Cascade
 
 ## Anatomie d'une règle CSS
 
-![Une règle css, composée d'un sélecteur, une propriété et une valeur.](assets/images/css-rules.png)
+![Une règle css, composée d'un sélecteur, une propriété et une valeur.](../assets/images/css-rules.png)
 
 Notes: Cette règle s'applique à tous les éléments de type titre de niveau 1 ("h1").
 
@@ -55,7 +55,7 @@ Notes: Cette règle s'applique à tous les éléments de type titre de niveau 1 
 </head>
 ```
 
-![La feuille de style est située dans le même dossier que la page web](assets/images/relative-path_stylesheet.png)
+![La feuille de style est située dans le même dossier que la page web](../assets/images/relative-path_stylesheet.png)
 
 ## Les couleurs
 
@@ -77,7 +77,7 @@ p {
 }
 ```
 
-![Composition des couleurs par addition des couches rouge verte et bleue.](assets/images/rgb-pixel.png)
+![Composition des couleurs par addition des couches rouge verte et bleue.](../assets/images/rgb-pixel.png)
 
 ### Code hexadecimal:
 
@@ -87,7 +87,7 @@ body {
 }
 ```
 
-![Chaque ensemble de deux lettres représente la proportion d'une couleur](assets/images/color-hex.png)
+![Chaque ensemble de deux lettres représente la proportion d'une couleur](../assets/images/color-hex.png)
 
 0, 1, 2, 3, ..., 9, *a, b, c, d, e, f,* 10, 11, 12, ..., *1a, 1b,* ...
 
@@ -129,7 +129,7 @@ body {
 	
 ### Sélecteurs de couleur
 
-![Le site colorpicker.me](assets/images/colorpicker.png)
+![Le site colorpicker.me](../assets/images/colorpicker.png)
 
 [https://colorpicker.me/](https://colorpicker.me/)
 
@@ -141,7 +141,7 @@ body {
 }
 ```
 
-![Les propriétés du body ruissellent dans ses éléments enfants](assets/images/cascading.png)
+![Les propriétés du body ruissellent dans ses éléments enfants](../assets/images/cascading.png)
 
 ##
 
@@ -186,7 +186,7 @@ h1 {
 }
 ```
 
-![La règle sur l'élément h1 surcharge la règle sur le body](assets/images/css-overwrite.png)
+![La règle sur l'élément h1 surcharge la règle sur le body](../assets/images/css-overwrite.png)
 
 ##
 

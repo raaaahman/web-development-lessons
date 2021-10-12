@@ -6,7 +6,7 @@ Octobre 2021
 
 ## Quésaco?
 
-![Du code HTML](assets/images/html.jpeg)
+![Du code HTML](../assets/images/html.jpeg)
 
 **H**yper**T**ext **M**ark up **L**anguage ~= Language de balises hypertextes
 
@@ -50,7 +50,7 @@ Notes: Les titres donnent une indication sur le contenu de la page.
 
 ## Imbriquer les éléments
 
-![Les éléments s'imbriquent les uns dans les autres](assets/images/nested-html.png)
+![Les éléments s'imbriquent les uns dans les autres](../assets/images/nested-html.png)
 
 ```html
 <ul>
@@ -164,13 +164,13 @@ Mozilla Developer's Network - la référence HTML : [https://developer.mozilla.o
 
 ## Utiliser un éditeur de texte
 
-![La même page HTML passée à l'éditeur de texte et au navigateur ne produit pas le même résultat](assets/images/editor-browser.png)
+![La même page HTML passée à l'éditeur de texte et au navigateur ne produit pas le même résultat](../assets/images/editor-browser.png)
 
 ##
 
 Visual Studio Code / Sublime Text = Editeur de texte =/= Traitement de texte = Word
 
-[Document texte](assets/examples/richtext.docx)
+[Document texte](../assets/examples/richtext.docx)
 
 - Sublime Text: [https://www.sublimetext.com/download](https://www.sublimetext.com/download)
 - Visual Studio Code: [https://code.visualstudio.com/#alt-downloads](https://code.visualstudio.com/#alt-downloads)
@@ -269,13 +269,13 @@ Validateur HTML: [https://validator.w3.org](/https://validator.w3.org/)
 </html>
 ```
 
-![La description du site AlloCiné apparaît dans les résultats de recherche Google.](assets/images/meta-description.png)
+![La description du site AlloCiné apparaît dans les résultats de recherche Google.](../assets/images/meta-description.png)
 
 ## L'inspecteur (Navigateur)
 
 Firefox & Chrome: *Clic droit > 'Inspecter'* OU *Ctrl/Cmd + Maj + I* 
 
-![L'inspecteur du navigateur permet de visualiser le code source de la page HTML.](assets/images/inspector.png)
+![L'inspecteur du navigateur permet de visualiser le code source de la page HTML.](../assets/images/inspector.png)
 
 ## Les commentaires
 
@@ -337,7 +337,7 @@ Firefox & Chrome: *Clic droit > 'Inspecter'* OU *Ctrl/Cmd + Maj + I*
 </ul>
 ```
 
-![Les éléments li sont les enfants de l'élément ul, qui est leur parent](assets/images/html-descendance.png)
+![Les éléments li sont les enfants de l'élément ul, qui est leur parent](../assets/images/html-descendance.png)
 
 ## Descendance (plusieurs niveaux)
 
@@ -356,7 +356,7 @@ Firefox & Chrome: *Clic droit > 'Inspecter'* OU *Ctrl/Cmd + Maj + I*
 </ul>
 ```
 
-![Les éléments enfants des enfants sont appelés descendants, tandis que les éléments parents des parents sont appelés ancêtres.](assets/images/html-descendance-2.png)
+![Les éléments enfants des enfants sont appelés descendants, tandis que les éléments parents des parents sont appelés ancêtres.](../assets/images/html-descendance-2.png)
 
 ## Les chemins absolus (distants)
 
@@ -364,7 +364,7 @@ Firefox & Chrome: *Clic droit > 'Inspecter'* OU *Ctrl/Cmd + Maj + I*
 <img src="https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg">
 ```
 
-![Le site envoie une requête HTTP vers le serveur où est hébergée l'image qu'il veut afficher.](assets/images/distant-link.png)
+![Le site envoie une requête HTTP vers le serveur où est hébergée l'image qu'il veut afficher.](../assets/images/distant-link.png)
 
 ## Les chemins absolus (locaux)
 
@@ -372,7 +372,7 @@ Firefox & Chrome: *Clic droit > 'Inspecter'* OU *Ctrl/Cmd + Maj + I*
 <img src="/images/Avengers_Endgame.jpg">
 ```
 
-![L'image est recherchée depuis la racine du site, c'est-à-dire, le serveur.](assets/images/absolute-path.png)
+![L'image est recherchée depuis la racine du site, c'est-à-dire, le serveur.](../assets/images/absolute-path.png)
 
 ## Les chemins relatifs
 
@@ -380,7 +380,7 @@ Firefox & Chrome: *Clic droit > 'Inspecter'* OU *Ctrl/Cmd + Maj + I*
 <img src="images/Avengers_Endgame.png">
 ```
 
-![L'image est recherchée depuis le dossier de la page actuelle.](assets/images/relative-path.png)
+![L'image est recherchée depuis le dossier de la page actuelle.](../assets/images/relative-path.png)
 
 ## Les ancres
 
