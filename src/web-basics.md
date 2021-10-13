@@ -1,3 +1,8 @@
+---
+title: Comprendre le Web
+cover: assets/images/web-internet-1-4.jpg
+---
+
 # Quelques métiers du web
 
 Sylvain Schellenberger
@@ -71,7 +76,7 @@ Qu'est-ce que l'_Internet_?
 
 ## 
 
-![Des ordinateurs connectés](../assets/images/internet.png)
+![Des ordinateurs connectés à l'internet.](../assets/images/web-internet-1-4.jpg)
 
 InterNet = Interconnected Network
 

@@ -2,27 +2,71 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>reveal-md</title>
+    <title>Développement Web</title>
     <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <style>
+      /* Use Reveal Theme fonts and colors */
+      body {
+        background-color: var(--r-background-color);
+        font-family: var(--r-main-font);
+        color:  var(--r-main-color);
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        margin:  var(--r-heading-margin);
+        font-family: var(--r-heading-font);
+        color: var(--r-heading-color);
+        letter-spacing: var(--r-heading-letter-spacing);
+        text-transform: var(--r-heading-text-transform);
+        text-shadow: var(--r-heading-text-shadow);
+      }
+
+      a {
+        color:  var(--r-link-color-dark);
+      }
+
+      a:visited {
+        color: var(--r-link-color);
+      }
+
+      a:hover {
+        color:  var(--r-link-color-hover);
+      }
+
+      /* Layout */
+      .decks-list {
+        display:  flex;
+      }
+
+      .deck-item {
+        list-style: none;
+        flex: 1 1 33%;
+      }
+
+      .deck-item img {
+        width:  100%;
+      }
+    </style>
   </head>
 
   <body>
-    <ul>
-      <li>
-        <a href="src&#x2F;css-bases.html" title="">
-          src&#x2F;css-bases.html
-        </a>
-      </li>
-      <li>
-        <a href="src&#x2F;html-basics.html" title="">
-          src&#x2F;html-basics.html
-        </a>
-      </li>
-      <li>
-        <a href="src&#x2F;web-basics.html" title="">
-          src&#x2F;web-basics.html
-        </a>
-      </li>
-    </ul>
+    <main>
+      <h1>Développement Web pour les (pas si) nuls</h1>
+      <ul class="decks-list">
+        <li class="deck-item">
+          <h2><a href="src&#x2F;css-bases.html" title="CSS - Les Bases">CSS - Les Bases</a></h2>
+          <img src="assets&#x2F;images&#x2F;unicorn.jpg" alt="CSS - Les Bases"/>
+        </li>
+        <li class="deck-item">
+          <h2><a href="src&#x2F;html-basics.html" title="HTML - Les bases">HTML - Les bases</a></h2>
+          <img src="assets&#x2F;images&#x2F;html.jpeg" alt="HTML - Les bases"/>
+        </li>
+        <li class="deck-item">
+          <h2><a href="src&#x2F;web-basics.html" title="Comprendre le Web">Comprendre le Web</a></h2>
+          <img src="assets&#x2F;images&#x2F;web-internet-1-4.jpg" alt="Comprendre le Web"/>
+        </li>
+      </ul>
+    </main>
   </body>
 </html>
+

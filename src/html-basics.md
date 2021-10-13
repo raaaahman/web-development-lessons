@@ -1,3 +1,8 @@
+---
+title: HTML - Les bases
+cover: assets/images/html.jpeg
+---
+
 # HTML
 
 Sylvain Schellenberger

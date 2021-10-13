@@ -1,4 +1,5 @@
 {
 	"verticalSeparator": "\n(?=##)",
+	"listingTemplate": "assets/templates/listing.html",
 	"css": "assets/css/quiz.css"
 }

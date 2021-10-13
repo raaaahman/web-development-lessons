@@ -1,3 +1,8 @@
+---
+title: CSS - Les Bases
+cover: assets/images/unicorn.jpg
+---
+
 # CSS - Les bases
 
 ## Quésaco?
