@@ -7,9 +7,14 @@
     <style>
       /* Use Reveal Theme fonts and colors */
       body {
+        margin: 0;
         background-color: var(--r-background-color);
         font-family: var(--r-main-font);
         color:  var(--r-main-color);
+      }
+
+      * {
+        box-sizing: border-box;
       }
 
       h1, h2, h3, h4, h5, h6 {
@@ -34,14 +39,33 @@
       }
 
       /* Layout */
+      main {
+        max-width: 960px;
+        margin: auto;
+      }
+
       .decks-list {
-        display:  flex;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
       }
 
       .deck-item {
         list-style: none;
         padding: 1em;
-        flex: 1 1 33%;
+        flex: 0 0 33%;
+      }
+
+      @media screen and (max-width: 960px) {
+        .deck-item {
+          flex: 0 0 50%;
+        }
+      }
+
+      @media screen and (max-width:  764px) {
+        .deck-item {
+          flex:  0 0 100%;
+        }
       }
 
       .deck-item img {

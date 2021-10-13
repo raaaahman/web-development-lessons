@@ -11,7 +11,7 @@ Octobre 2021
 
 ## Développeur·se Web
 
-<!-- .slide: data-background-image="../assets/images/developer.png" -->
+<!-- .slide: data-background-image="assets/images/developer.png" -->
 
 - Recueille le besoin du client
 - "Pisse" du code
@@ -22,7 +22,7 @@ Autres noms: Développeur·se Fullstack, développeur·se back-end, développeur
 
 ## Web Designer
 
-<!-- .slide: data-background-image="../assets/images/halston.jpg" -->
+<!-- .slide: data-background-image="assets/images/halston.jpg" -->
 
 - Recueille le besoin du client
 - Conçoit le parcours utilisateur
@@ -33,7 +33,7 @@ Autre noms: (info)graphiste
 
 ## Community Manager
 
-<!-- .slide: data-background-image="../assets/images/community.jpg" -->
+<!-- .slide: data-background-image="assets/images/community.jpg" -->
 
 - Recueille le besoin du client
 - Conçoit la stratégie de communication
@@ -44,7 +44,7 @@ Autre noms: Brand manager, rédacteur·trice de contenus web, chargé·e de comm
 
 ## Administrateur système
 
-<!-- .slide: data-background-image="../assets/images/sys-admin.jpeg" -->
+<!-- .slide: data-background-image="assets/images/sys-admin.jpeg" -->
 
 - Attend la fin du développement
 - Déploie l'application sur des serveurs
@@ -76,7 +76,7 @@ Qu'est-ce que l'_Internet_?
 
 ## 
 
-![Des ordinateurs connectés à l'internet.](../assets/images/web-internet-1-4.jpg)
+![Des ordinateurs connectés à l'internet.](assets/images/web-internet-1-4.jpg)
 
 InterNet = Interconnected Network
 
@@ -97,7 +97,7 @@ Que signifie _World Wide Web_?
 
 ##
 
-![Ensemble de pages web reliées entre elles](../assets/images/web.png)
+![Ensemble de pages web reliées entre elles](assets/images/web.png)
 
 World Wide Web ~= Toile d'araignée mondiale
 
@@ -118,7 +118,7 @@ Le _Web_ et _Internet_ sont-ils la même chose?
 
 ##
 
-![Internet comprend le web](../assets/images/web-vs-internet.png)
+![Internet comprend le web](assets/images/web-vs-internet.png)
 
 Internet = Web + emails +  peer-to-peer + RSS + etc...
 
@@ -139,7 +139,7 @@ A quoi sert un navigateur web?
 
 ##
 
-![Le navigateur contacte le serveur et permet de consulter la page web](../assets/images/browser.png)
+![Le navigateur contacte le serveur et permet de consulter la page web](assets/images/browser.png)
 
 Notes: Un navigateur web permet de consulter des ressources distantes (ou locales), souvent des pages web.
 
@@ -162,7 +162,7 @@ Le Web fonctionne sur le modèle:
 
 ## 
 
-![Le client envoie une requête vers une URL donnée, le serveur lui répond avec une page web.](../assets/images/client-serveur.png)
+![Le client envoie une requête vers une URL donnée, le serveur lui répond avec une page web.](assets/images/client-serveur.png)
 
 1. Le client envoie une requête au serveur (via une adresse URL)
 2. Le serveur interprète la requête et renvoie une réponse (ou pas)
@@ -182,7 +182,7 @@ Par conséquent, lorsque vous naviguez sur internet, qui est le client?
 
 ## 
 
-![Internet Explorer, Google Chrome, Firefox, Safari, Opera ](../assets/images/browser-vendors.png)
+![Internet Explorer, Google Chrome, Firefox, Safari, Opera ](assets/images/browser-vendors.png)
 
 Notes: Le navigateur agi comme client: c'est lui qui demande à accéder à la ressource que contient un serveur.
 
@@ -201,7 +201,7 @@ A quoi sert une adresse URL?
 
 ##
 
-![Une URL permet de localiser une ressource dans un réseau](../assets/images/url.png)
+![Une URL permet de localiser une ressource dans un réseau](assets/images/url.png)
 
 URL = Uniform Resource Locator
 
@@ -222,7 +222,7 @@ Quel est le rôle d'un moteur de recherhce ?
 
 ##
 
-![Un moteur de recherche permet de trouver les pages parlant de pingouin](../assets/images/search-engine.png)
+![Un moteur de recherche permet de trouver les pages parlant de pingouin](assets/images/search-engine.png)
 
 ## Une question de protocole
 
@@ -239,7 +239,7 @@ Lorsqu'un navigateur (client) communique avec un serveur, ils échangent des don
 
 ## 
 
-![HTTP est le protocole des échanges de données du web](../assets/images/https.jpg)
+![HTTP est le protocole des échanges de données du web](assets/images/https.jpg)
 
 HTTP = HyperText Transfer Protocol (Secure)
 
@@ -260,7 +260,7 @@ Qu'est-ce qu'un lien hypertexte (ou hyperlien)?
 
 ## 
 
-![Un lien hypertexte connecte plusieurs documents. Source: Wikipedia](../assets/images/Sistema_hipertextual.jpg)
+![Un lien hypertexte connecte plusieurs documents. Source: Wikipedia](assets/images/Sistema_hipertextual.jpg)
 
 Notes: Un lien hypertexte est une portion de texte interactive qui permet de relier plusieurs documents.
 

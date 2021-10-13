@@ -7,9 +7,14 @@
     <style>
       /* Use Reveal Theme fonts and colors */
       body {
+        margin: 0;
         background-color: var(--r-background-color);
         font-family: var(--r-main-font);
         color:  var(--r-main-color);
+      }
+
+      * {
+        box-sizing: border-box;
       }
 
       h1, h2, h3, h4, h5, h6 {
@@ -34,13 +39,33 @@
       }
 
       /* Layout */
+      main {
+        max-width: 960px;
+        margin: auto;
+      }
+
       .decks-list {
-        display:  flex;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
       }
 
       .deck-item {
         list-style: none;
-        flex: 1 1 33%;
+        padding: 1em;
+        flex: 0 0 33%;
+      }
+
+      @media screen and (max-width: 960px) {
+        .deck-item {
+          flex: 0 0 50%;
+        }
+      }
+
+      @media screen and (max-width:  764px) {
+        .deck-item {
+          flex:  0 0 100%;
+        }
       }
 
       .deck-item img {
@@ -54,15 +79,15 @@
       <h1>Développement Web pour les (pas si) nuls</h1>
       <ul class="decks-list">
         <li class="deck-item">
-          <h2><a href="src&#x2F;css-bases.html" title="CSS - Les Bases">CSS - Les Bases</a></h2>
+          <h2><a href="css-bases.html" title="CSS - Les Bases">CSS - Les Bases</a></h2>
           <img src="assets&#x2F;images&#x2F;unicorn.jpg" alt="CSS - Les Bases"/>
         </li>
         <li class="deck-item">
-          <h2><a href="src&#x2F;html-basics.html" title="HTML - Les bases">HTML - Les bases</a></h2>
-          <img src="assets&#x2F;images&#x2F;html.jpeg" alt="HTML - Les bases"/>
+          <h2><a href="html-basics.html" title="HTML - Les bases">HTML - Les bases</a></h2>
+          <img src="assets&#x2F;images&#x2F;html.jpg" alt="HTML - Les bases"/>
         </li>
         <li class="deck-item">
-          <h2><a href="src&#x2F;web-basics.html" title="Comprendre le Web">Comprendre le Web</a></h2>
+          <h2><a href="web-basics.html" title="Comprendre le Web">Comprendre le Web</a></h2>
           <img src="assets&#x2F;images&#x2F;web-internet-1-4.jpg" alt="Comprendre le Web"/>
         </li>
       </ul>
