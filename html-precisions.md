@@ -1,5 +1,5 @@
 ---
-title: HTML -Précisions
+title: HTML - Précisions
 cover: assets/images/ada-lovelace.jpeg
 ---
 

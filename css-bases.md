@@ -7,17 +7,17 @@ cover: assets/images/unicorn.jpg
 
 ## Quésaco?
 
-![Une licorne, un arc-en-ciel, une cascade.](assets/images/unicorn.jpg)
+<img alt="Une licorne, un arc-en-ciel, une cascade" src="assets/images/unicorn.jpg" class="r-stretch"/>
 
 Cascading Style Sheet = Feuilles de Styles en Cascade
 
 ## L'attribut style
 
 ```html
-<h1 style="color: gold;">Bob l'éponge</h1>
+<h1 style="color: blue;">Ada Lovelace</h1>
 ```
 
-<iframe srcdoc="<h1 style='color: gold;'>Bob l'éponge</h1>"></iframe>
+<iframe srcdoc="<h1 style='color: blue;'>Ada Lovelace</h1>"></iframe>
 
 ## La balise style
 
@@ -25,32 +25,26 @@ Cascading Style Sheet = Feuilles de Styles en Cascade
 <head>
 	<style>
 		h1 {
-			color: gold;
+			color: blue;
 		}
 	</style>
 </head>
 <body>
-	<h1>Bob l'éponge</h1>
+	<h1>Ada Lovelace</h1>
 </body>
 ```
 
 <iframe srcdoc="<head>
 	<style>
 		h1 {
-			color: gold;
+			color: blue;
 		}
 	</style>
 </head>
 <body>
-	<h1>Bob l'éponge</h1>
+	<h1>Ada Lovelace</h1>
 </body>">
 </iframe>
-
-## Anatomie d'une règle CSS
-
-![Une règle css, composée d'un sélecteur, une propriété et une valeur.](assets/images/css-rules.png)
-
-Notes: Cette règle s'applique à tous les éléments de type titre de niveau 1 ("h1").
 
 ## La feuille de style externe
 
@@ -60,7 +54,19 @@ Notes: Cette règle s'applique à tous les éléments de type titre de niveau 1 
 </head>
 ```
 
-![La feuille de style est située dans le même dossier que la page web](assets/images/relative-path_stylesheet.png)
+<img alt="La feuille de style est située dans le même dossier que la page web" src="assets/images/relative-path-stylesheet_ada-lovelace.png" class="r-stretch"/>
+
+```css
+h1 {
+	color: blue;
+}
+```
+
+## Anatomie d'une règle CSS
+
+![Une règle css, composée d'un sélecteur, une propriété et une valeur.](assets/images/css-rules-ada.png)
+
+Notes: Cette règle s'applique à tous les éléments de type titre de niveau 1 ("h1").
 
 ## Les couleurs
 
@@ -68,165 +74,79 @@ Mot-clé:
 
 ```css
 h1 {
-	color: gold;
+	color: blue;
 }
 ```
 
-Liste des couleurs: [https://developer.mozilla.org/en-US/docs/Web/CSS/color_value](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
+Liste des couleurs: [https://developer.mozilla.org/fr/docs/Web/CSS/color_value](https://developer.mozilla.org/fr/docs/Web/CSS/color_value)
 
 ### Valeurs RGB (Red, Green, Blue):
 
 ```css
 p {
-	color: rgb(32, 32, 128);
+	color: rgb(128, 32, 32);
 }
 ```
 
 ![Composition des couleurs par addition des couches rouge verte et bleue.](assets/images/rgb-pixel.png)
 
+###
+
+<iframe srcdoc="
+<head><style>
+h1 {
+	color: blue;
+}
+p {
+	color: rgb(128, 32, 32);
+}
+</style><h1>Ada Lovelace</h1>
+	<p>Première programmeuse de l'histoire</p>"></iframe>
+
 ### Code hexadecimal:
 
 ```css
 body {
-	background-color: #f2f2f2;
+	background-color: #d1b79c;
 }
 ```
 
 ![Chaque ensemble de deux lettres représente la proportion d'une couleur](assets/images/color-hex.png)
 
-0, 1, 2, 3, ..., 9, *a, b, c, d, e, f,* 10, 11, 12, ..., *1a, 1b,* ...
+```css
+body {
+	background-color: rgb(209, 183, 156);
+}
+```
 
-## 
+###
 
-<iframe style="overflow: visible; width: 100%; height: 60vh;" 
-		srcdoc="
-				<head>
-					<style>
-						body {
-								background-color: #c4c4c4;
-							}
-							h1 {
-								color: gold;
-							}
-							p {
-								color: rgb(32, 32, 128);
-							}
-					</style>
-				</head>
-				<body>
-					<img src=http://www.photoshoptuto.com/wp-content/ressources/crop/bob-eponge.jpg />
-					<h1>Bob l'éponge</h1>
-					<p>Cuisinier souriant</p>
-					<h2>Sa vie</h2>
-					<ul>
-						<li>Habite à <strong>Bikini Bottom</strong></li>
-						<li>Travaille au <strong>Crabe Croustillant</strong></li>
-					</ul>
-					<h2>Son oeuvre</h2>
-					<ol>
-						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film target=_blank>Bob l'éponge, le film</a></li>
-						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_Un_h%C3%A9ros_sort_de_l%27eau  target=_blank>Un héros sort de l'eau</a></li>
-						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_%C3%89ponge_en_eaux_troubles  target=_blank>Eponge en eaux troubles</a></li>
-					</ol>
-				</body>
-			">
-	</iframe>
+<iframe srcdoc="
+<head>
+<style>
+	body {
+		background-color: #d1b79c;
+	}
+	h1 {
+		color: blue;
+	}
+	p {
+		color: rgb(128, 32, 32);
+	}
+</style>
+</head>
+	<body>
+		<h1>Ada Lovelace</h1>
+		<p>Première programmeuse de l'histoire</p>
+	</body>">
+</iframe>
 	
 ### Sélecteurs de couleur
 
-![Le site colorpicker.me](assets/images/colorpicker.png)
+<img alt="Le site colorpicker.me" src="assets/images/colorpicker.png" class="r-stretch"/>
 
 [https://colorpicker.me/](https://colorpicker.me/)
 
-## La cascade
-
-```css
-body {
-	color: rgb(32, 32, 128);
-}
-```
-
-![Les propriétés du body ruissellent dans ses éléments enfants](assets/images/cascading.png)
-
-##
-
-<iframe style="overflow: visible; width: 100%; height: 60vh;" 
-		srcdoc="
-				<head>
-					<style>
-						body {
-							background-color: #c4c4c4;
-							color: rgb(32, 32, 128);
-						}
-					</style>
-				</head>
-				<body>
-					<img src=http://www.photoshoptuto.com/wp-content/ressources/crop/bob-eponge.jpg />
-					<h1>Bob l'éponge</h1>
-					<p>Cuisinier souriant</p>
-					<h2>Sa vie</h2>
-					<ul>
-						<li>Habite à <strong>Bikini Bottom</strong></li>
-						<li>Travaille au <strong>Crabe Croustillant</strong></li>
-					</ul>
-					<h2>Son oeuvre</h2>
-					<ol>
-						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film target=_blank>Bob l'éponge, le film</a></li>
-						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_Un_h%C3%A9ros_sort_de_l%27eau  target=_blank>Un héros sort de l'eau</a></li>
-						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_%C3%89ponge_en_eaux_troubles  target=_blank>Eponge en eaux troubles</a></li>
-					</ol>
-				</body>
-			">
-	</iframe>
-	
-## La surcharge
-
-```css [5-7]
-body {
-	background-color: #c4c4c4;
-	color: rgb(32, 32, 128);
-}
-h1 {
-	color: gold;
-}
-```
-
-![La règle sur l'élément h1 surcharge la règle sur le body](assets/images/css-overwrite.png)
-
-##
-
-<iframe style="overflow: visible; width: 100%; height: 60vh;" 
-		srcdoc="
-				<head>
-					<style>
-						body {
-							background-color: #c4c4c4;
-							color: rgb(32, 32, 128);
-						}
-						h1 {
-							color: gold;
-						}
-					</style>
-				</head>
-				<body>
-					<img src=http://www.photoshoptuto.com/wp-content/ressources/crop/bob-eponge.jpg />
-					<h1>Bob l'éponge</h1>
-					<p>Cuisinier souriant</p>
-					<h2>Sa vie</h2>
-					<ul>
-						<li>Habite à <strong>Bikini Bottom</strong></li>
-						<li>Travaille au <strong>Crabe Croustillant</strong></li>
-					</ul>
-					<h2>Son oeuvre</h2>
-					<ol>
-						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film target=_blank>Bob l'éponge, le film</a></li>
-						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_Un_h%C3%A9ros_sort_de_l%27eau  target=_blank>Un héros sort de l'eau</a></li>
-						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_%C3%89ponge_en_eaux_troubles  target=_blank>Eponge en eaux troubles</a></li>
-					</ol>
-				</body>
-			">
-	</iframe>
-	
 ## Les polices
 
 ```css
@@ -235,7 +155,7 @@ body {
 }
 ```
 
-
+![Une police serif a des empattements, alors qu'une police sans-serif n'en n'a pas.](assets/images/serif-sans-serif.jpeg)
 
 ### Familles
 
@@ -247,7 +167,7 @@ body {
  
 ### Polices "Web safe"
 
-~ Disponibles sur les navigateurs. Exemples:
+~ Disponibles sur tous les navigateurs. Exemples:
 
 - Arial (sans-serif)
 - Times New Roman (serif)
@@ -269,6 +189,12 @@ h1 {
 }
 ```
 
+![La est située dans le sous-dossiers fonts.](assets/images/relative-path-font.png)
+
+## Google Fonts
+
+[https://fonts.google.com/](https://fonts.google.com/)
+
 ### Valeurs de remplacement
 
 ```css
@@ -281,32 +207,236 @@ h1 {
 
 ## Les dimensions
 
-## Les fonds
-
-## Validateur W3C
-
----
-
-# CSS - La mise en page
-
-## Sélecteur de classes
-
-```html
-<div class="container">
-	<!-- ... -->
-</div>
-```
-
 ```css
-.container {
-	
+p { 
+	font-size: 16px; 
 }
 ```
 
-## Centrage
+### Les unités relatives
 
-## Espacement
+```css
+body {
+	font-size: 16px;
+}
 
-## Modèle de boîte
+h1 {
+	font-size: 4em;
+}
+```
 
-## TP: Mettre en page la présentation
+4 * 16 pixels = 64 pixels
+
+### Hauteur de lignes
+
+```css
+h1 {
+	font-size: 4em;
+	line-height: 1.5;
+}
+```
+
+1.5 * 4 * 16 pixels = 96 pixels
+
+### Pourcentage
+
+```css
+h1 {
+	font-size: 4em;
+	line-height: 150%;
+}
+```
+
+150 / 100 * 4 * 16 pixels = 96 pixels
+
+## Styler un élément particulier
+
+```html [3]
+<body>
+	<h1>Ada Lovelace</h1>
+	<p id="tagline">Première programmeuse de l'histoire</p>
+	<h2>Biographie</h2>
+	<p>Né en 1816, ...</p>
+	<p>Elle rencontre le mathématicien anglais Charles Babbage le 5 Juin 1833 (à l'âge de 17 ans), qui deviendra son tuteur et ami.</p>
+</body>
+```
+
+```css
+#tagline {
+	font-size: 1.5em;
+}
+```
+
+###
+
+<iframe style="width: 100%; min-height: 60vh;" srcdoc="
+<head>
+<style>
+	body {
+		background-color: #d1b79c;
+	}
+	h1 {
+		color: blue;
+	}
+	p {
+		color: rgb(128, 32, 32);
+	}
+	#tagline {
+		font-size: 1.5em;
+	}
+</style>
+</head>
+	<body>
+		<h1>Ada Lovelace</h1>
+	<p id=tagline>Première programmeuse de l'histoire</p>
+	<h2>Biographie</h2>
+	<p>Né en 1816, ...</p>
+	<p>Elle rencontre le mathématicien anglais Charles Babbage le 5 Juin 1833 (à l'âge de 17 ans), qui deviendra son tuteur et ami.</p>
+	</body>">
+</iframe>
+
+### Plusieurs éléments similaires
+
+```html [5-6]
+<body>
+	<h1>Ada Lovelace</h1>
+	<p id="tagline">Première programmeuse de l'histoire</p>
+	<h2>Biographie</h2>
+	<p class="info-text">Né en 1816, ...</p>
+	<p class="info-text">Elle rencontre le mathématicien anglais Charles Babbage le 5 Juin 1833 (à l'âge de 17 ans), qui deviendra son tuteur et ami.</p>
+</body>
+```
+
+```css
+.info-text {
+	font-family: Roboto, sans-serif;
+}
+```
+
+###
+
+<iframe style="width: 100%; min-height: 60vh;" srcdoc="
+<head>
+<style>
+	body {
+		background-color: #d1b79c;
+	}
+	h1 {
+		color: blue;
+	}
+	p {
+		color: rgb(128, 32, 32);
+	}
+	#tagline {
+		font-size: 1.5em;
+	}
+	.info-text {
+		font-family: Roboto, sans-serif;
+	}
+</style>
+</head>
+	<body>
+	<h1>Ada Lovelace</h1>
+	<p id=tagline>Première programmeuse de l'histoire</p>
+	<h2>Biographie</h2>
+	<p class=info-text>Né en 1816, ...</p>
+	<p class=info-text>Elle rencontre le mathématicien anglais Charles Babbage le 5 Juin 1833 (à l'âge de 17 ans), qui deviendra son tuteur et ami.</p>
+	</body>">
+</iframe>
+
+## La graisse
+
+```css
+h1 {
+	font-weight: normal;
+}
+
+#tagline {
+	font-weight: bold;
+}
+```
+
+Autres valeurs: [https://developer.mozilla.org/fr/docs/Web/CSS/font-weight](https://developer.mozilla.org/fr/docs/Web/CSS/font-weight)
+
+###
+
+<iframe style="width: 100%; min-height: 60vh;" srcdoc="
+<head>
+<style>
+	body {
+		background-color: #d1b79c;
+	}
+	h1 {
+		color: blue;
+		font-weight: normal;
+	}
+	p {
+		color: rgb(128, 32, 32);
+	}
+	#tagline {
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+	.info-text {
+		font-family: Roboto, sans-serif;
+	}
+</style>
+</head>
+	<body>
+	<h1>Ada Lovelace</h1>
+	<p id=tagline>Première programmeuse de l'histoire</p>
+	<h2>Biographie</h2>
+	<p class=info-text>Né en 1816, ...</p>
+	<p class=info-text>Elle rencontre le mathématicien anglais Charles Babbage le 5 Juin 1833 (à l'âge de 17 ans), qui deviendra son tuteur et ami.</p>
+	</body>">
+</iframe>
+
+## Les fonds
+
+```css
+body {
+	background-image: url(assets/images/parchemin.png);
+	background-repeat: no-repeat;
+	background-position: cover;
+}
+```
+
+Plus de possibilités: [https://developer.mozilla.org/fr/docs/Web/CSS/background-image](https://developer.mozilla.org/fr/docs/Web/CSS/background-image)
+
+###
+
+<iframe style="width: 100%; min-height: 60vh;" srcdoc="
+<head>
+<style>
+	body {
+		background-color: #d1b79c;
+		background-image: url(assets/images/parchemin.jpeg);
+	}
+	h1 {
+		color: blue;
+	}
+	p {
+		color: rgb(128, 32, 32);
+	}
+	#tagline {
+		font-size: 1.5em;
+	}
+	.info-text {
+		font-family: Roboto, sans-serif;
+	}
+</style>
+</head>
+	<body>
+	<h1>Ada Lovelace</h1>
+	<p id=tagline>Première programmeuse de l'histoire</p>
+	<h2>Biographie</h2>
+	<p class=info-text>Né en 1816, ...</p>
+	<p class=info-text>Elle rencontre le mathématicien anglais Charles Babbage le 5 Juin 1833 (à l'âge de 17 ans), qui deviendra son tuteur et ami.</p>
+	</body>">
+</iframe>
+
+## Validateur W3C
+
+Copier/coller le code CSS dans le validateur:
+
+[http://jigsaw.w3.org/css-validator/#validate_by_input](http://jigsaw.w3.org/css-validator/#validate_by_input)
