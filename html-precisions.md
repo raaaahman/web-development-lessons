@@ -5,10 +5,6 @@ cover: assets/images/ada-lovelace.jpeg
 
 # HTML - Précisions
 
-## Structure des fichiers
-
-![Un dossier pour le site, contenant une page index.html et un sous-dossier pour les images](assets/images/folder-structure.png)
-
 ## Le titre (pour le navigateur)
 
 ```html [4]
@@ -50,21 +46,13 @@ cover: assets/images/ada-lovelace.jpeg
 
 <img alt="L'élément h1 est l'enfant de l'élément body qui est l'enfant de l'élément html" src="assets/images/html-descendance-4.png" class="r-stretch"/>
 
-## Les chemins relatifs (images)
-
-```html
-<img src="assets/images/ada-lovelace.jpeg" alt="Ada Lovelace"/>
-```
-
-![La page est cherchée à partir du dossier de la page courante](assets/images/relative-path-ada.png)
-
 ## Les chemins relatifs (liens)
 
-```html
-<a href="georges-gordon-byron.html">George Gordon Byron</a>
-```
-
 ![La page est recherchée depuis le dossier de la page actuelle.](assets/images/relative-path-link.png)
+
+## Les chemins relatifs (images)
+
+![La page est cherchée à partir du dossier de la page courante](assets/images/relative-path-img.png)
 
 ---
 
@@ -72,7 +60,7 @@ cover: assets/images/ada-lovelace.jpeg
 
 ## Les commentaires
 
-```html [3]
+```html [2]
 <body>
 	<!-- Ce commentaire n'est pas affiché -->
 	<p>Ce texte est affiché.</p>
@@ -101,6 +89,17 @@ cover: assets/images/ada-lovelace.jpeg
 </body>">
 </iframe>
 
+## Les conteneurs (en ligne)
+
+```html
+<p>Première programmeuse de l'<span>Histoire</span></p>
+```
+
+<iframe style="background-color: white;" srcdoc="<body>
+	<p>Première programmeuse de l'<span>Histoire</span></p>
+</body>">
+</iframe>
+
 ## Les figures
 
 ```html
@@ -109,7 +108,7 @@ cover: assets/images/ada-lovelace.jpeg
 </figure>
 ```
 
-<iframe style="background-color: white; width: 100%; min-height: 40vh;" srcdoc="<figure>
+<iframe style="background-color: white; width: 100%; min-height: 60vh;" srcdoc="<figure>
 		<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Ada_Byron_daguerreotype_by_Antoine_Claudet_1843_or_1850_-_cropped.png/260px-Ada_Byron_daguerreotype_by_Antoine_Claudet_1843_or_1850_-_cropped.png' style='width: 33%;'>
 </figure>"></iframe>
 
@@ -122,7 +121,7 @@ cover: assets/images/ada-lovelace.jpeg
 </figure>
 ```
 
-<iframe style="background-color: white; width: 100%; min-height: 40vh;" srcdoc="<figure>
+<iframe style="background-color: white; width: 100%; min-height: 60vh;" srcdoc="<figure>
 		<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Ada_Byron_daguerreotype_by_Antoine_Claudet_1843_or_1850_-_cropped.png/260px-Ada_Byron_daguerreotype_by_Antoine_Claudet_1843_or_1850_-_cropped.png' style='width: 33%;'>
 		<figcation>Ada Lovelace a créé le premier programme informatique, avant même que les ordinateurs n'existent!</figcation>
 </figure>"></iframe>
@@ -163,46 +162,6 @@ cover: assets/images/ada-lovelace.jpeg
 ```
 
 ![Le favicon apparaît dans l'onglet du navigateur](assets/images/favicon.png)
-
----
-
-# Exercice
-
-## Objectif 
-
-Créer une page d'hommage, similaire à: [https://codepen.io/freeCodeCamp/full/zNqgVx](https://codepen.io/freeCodeCamp/full/zNqgVx).
-
-## Etapes
-
-1. Ma page d'hommage doit contenir un élément avec un attribut id="main", cet élément doit contenir tous les autres éléments.
-2. Je dois voir un élément avec un attribut id="title", qui contient une chaîne (ex.: "text") qui décrit le sujet de ma page (ex.: "Ada Lovelace").
-3. Je dois voir un élément div avec un attribut id="img-div".
-4. Dans l'élément img-div, je dois voir un élément img avec un attribut id="image".
-
-## Etapes (suite)
-
-5. Dans l'élément img-div, je dois voir un élément avec l'attribut id="img-caption" qui contient du texte décrivant l'image affichée dans l'élément img-div.
-6. Je dois voir un élément avec l'attribut id="tribute-info", qui contient du texte informatif concernant le sujet de la page (ex.: "Ada Lovelace est née le ...").
-
-## Etapes (fin)
-
-7. Je dois voir un élément avec l'attribut id="tribute-link", qui renvoie vers une page externe contenant plus d'information sur le sujet de la page (ex.: La page Wikipédia d'Ada Lovelace). INDICE: Vous devez donner un attribut target avec une valeur _blank à votre élément pour pouvoir ouvrir l'élément dans une nouvelle page ou onglet (i.e. target="_blank").
-
-## Validation
-
-Inclure, juste avant la fin du body, l'élément suivant:
-
-```html
-<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-```
-
-Sélectionner "Tribute Page" dans la liste déroulante et cliquer sur "Run Tests".
-
-![L'auto-validation par l'outil de free code camp](assets/images/fcc-run-tests.png)
-
-## Références
-
-- [Tribute Page, Responsive Web Design Projects, FreeCodeCamp](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page)
 
 ---
 
