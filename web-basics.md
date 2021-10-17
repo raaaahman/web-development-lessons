@@ -76,7 +76,7 @@ Qu'est-ce que l'_Internet_?
 
 ## 
 
-![Des ordinateurs connectés à l'internet.](assets/images/web-internet-1-4.jpg)
+<img alt="Des ordinateurs connectés à l'internet" src="assets/images/web-internet-1-4.jpg" class="r-stretch"/>
 
 InterNet = Interconnected Network
 
@@ -132,7 +132,7 @@ A quoi sert un navigateur web?
 
 1. Consulter des ressources distantes
 2. Diriger un bateau
-3. Accéder à internet
+3. Lire l'internet
 4. Pirater des ordinateurs
 
 </div>
@@ -147,7 +147,7 @@ Il y a plusieurs manière d'utiliser internet, comme l'utilisation d'un logiciel
 
 Le navigateur interprète des fichiers texte. Le navigateur peut envoyer des requêtes à travers internet pour accéder à des fichiers distants.
 
-## Fonctionnement d'internet
+## Fonctionnement du Web
 
 Le Web fonctionne sur le modèle:
 
@@ -169,7 +169,7 @@ Le Web fonctionne sur le modèle:
 
 ## Le client et le serveur
 
-Par conséquent, lorsque vous naviguez sur internet, qui est le client?
+Par conséquent, lorsque vous naviguez sur le Web, qui est le client?
 
 <div class="quiz-questions">
 
@@ -209,7 +209,7 @@ Notes: Une adresse URL (Uniform Resource Locator) sert à trouver une ressource 
 
 ## Les moteurs de recherche
 
-Quel est le rôle d'un moteur de recherhce ?
+Quel est le rôle d'un moteur de recherche?
 
 <div class="quiz-questions">
 
@@ -239,7 +239,7 @@ Lorsqu'un navigateur (client) communique avec un serveur, ils échangent des don
 
 ## 
 
-![HTTP est le protocole des échanges de données du web](assets/images/https.jpg)
+<img alt="HTTP est le protocole des échanges de données du web" src="assets/images/https.jpg" class="r-stretch"/>
 
 HTTP = HyperText Transfer Protocol (Secure)
 
