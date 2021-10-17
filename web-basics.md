@@ -22,7 +22,7 @@ Autres noms: Développeur·se Fullstack, développeur·se back-end, développeur
 
 ## Web Designer
 
-<!-- .slide: data-background-image="assets/images/halston.jpg" -->
+<!-- .slide: data-background-image="assets/images/web-designer.jpg" -->
 
 - Recueille le besoin du client
 - Conçoit le parcours utilisateur
