@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>CSS - Précisions</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+    <link rel="stylesheet" href="./_assets/assets/css/quiz.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+# Sélecteurs CSS
+</script></section><section data-markdown><script type="text/template">## Descendance des éléments HTML
+
+```html
+<html>
+	<body>
+		<h1>Neskawa</h1>
+		<p>Du bon kawa</p>
+		<p>Issu du commerce (presque) équitable et de l'agriculture (un peu) biologique!</p>
+	</body>
+</html>
+``` 
+<!-- .element: style="display: inline-block; width: 45%;" -->
+
+![html est le parent de body, qui est le parent de h1 et p, qui sont les descendants de html.](assets/images/html-descendance-4.png) 
+<!-- .element: style="display: inline-block; width: 45%;" -->
+</script></section><section data-markdown><script type="text/template">## Enfants directs
+
+```css
+html > body
+```
+
+![](assets/images/direct-child.png)
+</script></section><section data-markdown><script type="text/template">## Descendant
+
+```css
+html p
+```
+![](assets/images/descendants.png)
+</script></section><section data-markdown><script type="text/template">## Frères et soeurs (adjacence)
+
+```css
+h1 + p
+```
+
+![](assets/images/adjacent-sibling.png)
+</script></section><section data-markdown><script type="text/template">## Frères et soeurs (général)
+
+```css
+h1 ~ p
+```
+
+![](assets/images/all-siblings.png)
+</script></section><section data-markdown><script type="text/template">## Plusieurs éléments
+
+```css
+h1, p
+```
+
+![](assets/images/several.png)
+</script></section><section data-markdown><script type="text/template">## Pseudo-éléments
+
+```css
+p::last-child
+```
+
+![](assets/images/last-child.png)
+</script></section><section data-markdown><script type="text/template">##
+
+```css
+h1::last-of-type
+```
+
+![](assets/images/last-of-type.png)
+</script></section><section data-markdown><script type="text/template">## Pseudo-classes
+
+```css
+a:hover {
+	text-decoration: underline dotted;
+}
+```
+
+<iframe style="backrgound-color: white;" srcdoc="
+<head>
+	<style>
+		a:hover {
+			text-decoration: underline dotted;
+		}
+	</style>
+</head>
+<body>
+	<a href=#>Achète moi!</a>
+</body>"></iframe>
+</script></section><section data-markdown><script type="text/template">##
+
+```css
+a:visited {
+	color: red;
+}
+```
+
+<iframe style="background-color: white;" srcdoc="
+<head>
+	<style>
+		a:visited {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<a href=#>Achète moi!</a>
+</body>"></iframe>
+</script></section><section data-markdown><script type="text/template">## Ressources
+
+- Sélecteurs CSS, Mozilla Developers Network: [https://developer.mozilla.org/fr/docs/Learn/CSS/Building_blocks/Selectors](https://developer.mozilla.org/fr/docs/Learn/CSS/Building_blocks/Selectors)
+- CSS Diner, Flukeout: [https://flukeout.github.io/](https://flukeout.github.io/)
+</script></section></section><section ><section data-markdown><script type="text/template">
+# CSS - Le modèle de boîte
+</script></section><section data-markdown><script type="text/template">## Composition de la boîte
+
+```css
+p {
+	margin: 12px;
+	border: 1px solid black;
+	padding: 6px;
+}
+```
+
+![De l'extérieur vers l'intérieur, l'élément est composé d'une marge, une bordure et un padding.](assets/images/box-model.png)
+</script></section><section data-markdown><script type="text/template">## Dimensions standards
+
+```css
+p {
+	box-sizing: content-box;
+	width: 350px;
+	height: 150px;
+}
+```
+
+![La hauteur et largeur sont celles du contenu de la boîte.](assets/images/content-box.png)
+</script></section><section data-markdown><script type="text/template">## Dimensions à la bordure
+
+```css
+p {
+	box-sizing: border-box;
+	width: 350px;
+	height: 150px;
+}
+```
+
+![La hauteur et la largeur sont calculées à la bordure de l'élément](assets/images/border-box.png)
+</script></section><section data-markdown><script type="text/template">## Bordures
+
+```css
+p {
+	border-style: dashed;
+	border-width: 2px;
+	border-color: blue;
+	border: 2px dashed blue;
+}
+```
+
+<iframe style="background-color: white;" srcdoc="<head>
+	<style>
+		p {
+			border-style: dashed;
+			border-width: 2px;
+			border-color: blue;
+			border: 2px dashed blue;
+		}
+	</style>
+</head>
+<body>
+	<p>Le CSS, ça déboîte!</p>
+</body>
+"></iframe>
+</script></section><section data-markdown><script type="text/template">## Bordures directionnelles
+
+```css
+section {
+	border-top: 2px solid black;
+	border-right: none;
+	border-left: none;
+	border-bottom: 2px solid black;
+}
+```
+
+<iframe style="background-color: white; min-width: 400px; min-height: 200px;" srcdoc="<head>
+	<style>
+		section {
+			border-top: 2px solid black;
+			border-right: none;
+			border-left: none;
+			border-bottom: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<h2>Nos Produits</h2>
+	</section>
+	<section>
+		<h2>Avis consommateurs</h2>
+	</section>
+</body>
+"></iframe>
+</script></section><section data-markdown><script type="text/template">## Arrondis
+
+```css
+p {
+	background-color: lightblue;
+	border-radius: 12px;
+}
+```
+
+<iframe style="background-color: white;" srcdoc="<head>
+	<style>
+		p {
+			border: 2px dashed blue;
+			background-color: lightblue;
+		border-radius: 12px;
+		}
+	</style>
+</head>
+<body>
+	<p>Le CSS, ça déboîte!</p>
+</body>
+"></iframe>
+</script></section><section data-markdown><script type="text/template">## Cercle parfait
+
+```css
+img {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+}
+```
+
+<iframe style="background-color: white; min-height: 175px;" srcdoc="<head>
+	<style>
+		img {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+		}
+	</style>
+</head>
+<body>
+	<img src=assets/images/little-box.jpg />
+</body>
+"></iframe>
+
+</script></section><section data-markdown><script type="text/template">## Ombres
+
+```css
+img {
+	box-shadow: 0 0 12px black; 
+ } 
+```
+
+<iframe style="background-color: white; min-height: 175px;" srcdoc="<head>
+	<style>
+		img {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			box-shadow: 0 0 12px black; 
+		}
+	</style>
+</head>
+<body>
+	<img src=assets/images/little-box.jpg />
+</body>
+"></iframe>
+</script></section><section data-markdown><script type="text/template">## Positionnement "en bloc"
+
+```css
+img {
+	display: block;
+}
+```
+
+<iframe style="background-color: white; min-height: 320px;" srcdoc="<head>
+	<style>
+		img {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			box-shadow: 0 0 12px black;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<img src=assets/images/little-box.jpg />
+	<img src=assets/images/la-joconde.jpg />
+</body>
+"></iframe>
+</script></section><section data-markdown><script type="text/template">## Positionnement "en ligne"
+
+```css
+li {
+	display: inline;
+}
+```
+
+<iframe style="background-color: white;" srcdoc="<head>
+	<style>
+		li {
+			display: inline;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>Acceuil</li>
+		<li>Produits</li>
+		<li>Avis</li>
+	</ul>
+</body>
+"></iframe>
+</script></section><section data-markdown><script type="text/template">## Positionnement "bloc en ligne"
+
+```css
+article {
+	display: inline-block;
+	width: 33%;
+	margin: -1px;
+}
+```
+
+<iframe style="background-color: white; width: 100%; min-height: 300px;" srcdoc="<head>
+	<style>
+		img {
+			display: block;
+			width: 100%;
+		}
+		article {
+			display: inline-block;
+			width: 33%;
+			margin-right: -1px;
+			margin-left: -1px;
+		}
+	</style>
+</head>
+<body>
+	 <article>
+        <h2>Pur Arabica</h2>
+        <img src=assets/examples/neskawa/images/arabica.jpeg >
+    </article>
+    <article>
+        <h2>Robusta</h2>
+        <img src=assets/examples/neskawa/images/robusta.jpeg >
+    </article>
+    <article>
+        <h2>Mocca</h2>
+        <img src=assets/examples/neskawa/images/mocca.jpeg >
+    </article>
+</body>
+"></iframe>
+</script></section><section data-markdown><script type="text/template">## Inspecter la boîte
+
+<img alt="L'inspecteur du navigateur" src="assets/images/box-model-devtools.png" class="r-stretch"/>
+
+- `Ctrl + Maj + I`
+- `F12`
+- Clic droit > Inspecter
+</script></section><section data-markdown><script type="text/template">## Ressources
+
+Le modèle de Boîte, Mozilla Developers Network: [https://developer.mozilla.org/fr/docs/Learn/CSS/Building_blocks/The_box_model](https://developer.mozilla.org/fr/docs/Learn/CSS/Building_blocks/The_box_model)
+</script></section></section><section ><section data-markdown><script type="text/template">
+# La cascade
+
+```css
+body {
+	color: rgb(32, 32, 128);
+}
+```
+
+![Les propriétés du body ruissellent dans ses éléments enfants](assets/images/cascading.png)
+</script></section><section data-markdown><script type="text/template">##
+
+<iframe style="overflow: visible; width: 100%; height: 60vh;" 
+		srcdoc="
+				<head>
+					<style>
+						body {
+							background-color: #c4c4c4;
+							color: rgb(32, 32, 128);
+						}
+					</style>
+				</head>
+				<body>
+					<img src=http://www.photoshoptuto.com/wp-content/ressources/crop/bob-eponge.jpg />
+					<h1>Bob l'éponge</h1>
+					<p>Cuisinier souriant</p>
+					<h2>Sa vie</h2>
+					<ul>
+						<li>Habite à <strong>Bikini Bottom</strong></li>
+						<li>Travaille au <strong>Crabe Croustillant</strong></li>
+					</ul>
+					<h2>Son oeuvre</h2>
+					<ol>
+						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film target=_blank>Bob l'éponge, le film</a></li>
+						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_Un_h%C3%A9ros_sort_de_l%27eau  target=_blank>Un héros sort de l'eau</a></li>
+						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_%C3%89ponge_en_eaux_troubles  target=_blank>Eponge en eaux troubles</a></li>
+					</ol>
+				</body>
+			">
+	</iframe>
+	</script></section><section data-markdown><script type="text/template">## La surcharge
+
+```css [5-7]
+body {
+	background-color: #c4c4c4;
+	color: rgb(32, 32, 128);
+}
+h1 {
+	color: gold;
+}
+```
+
+![La règle sur l'élément h1 surcharge la règle sur le body](assets/images/css-overwrite.png)
+</script></section><section data-markdown><script type="text/template">##
+
+<iframe style="overflow: visible; width: 100%; height: 60vh;" 
+		srcdoc="
+				<head>
+					<style>
+						body {
+							background-color: #c4c4c4;
+							color: rgb(32, 32, 128);
+						}
+						h1 {
+							color: gold;
+						}
+					</style>
+				</head>
+				<body>
+					<img src=http://www.photoshoptuto.com/wp-content/ressources/crop/bob-eponge.jpg />
+					<h1>Bob l'éponge</h1>
+					<p>Cuisinier souriant</p>
+					<h2>Sa vie</h2>
+					<ul>
+						<li>Habite à <strong>Bikini Bottom</strong></li>
+						<li>Travaille au <strong>Crabe Croustillant</strong></li>
+					</ul>
+					<h2>Son oeuvre</h2>
+					<ol>
+						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film target=_blank>Bob l'éponge, le film</a></li>
+						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_Un_h%C3%A9ros_sort_de_l%27eau  target=_blank>Un héros sort de l'eau</a></li>
+						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_%C3%89ponge_en_eaux_troubles  target=_blank>Eponge en eaux troubles</a></li>
+					</ol>
+				</body>
+			">
+	</iframe>
+</script></section><section data-markdown><script type="text/template">## Spécificité
+</script></section><section data-markdown><script type="text/template">## Héritage
+</script></section><section data-markdown><script type="text/template">## Reset et Normalize</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"title":"Comprendre le web","transition":"slide","progress":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
