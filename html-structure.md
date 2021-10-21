@@ -42,10 +42,10 @@ Un seul `main`!
 		<p id="tagline">Lorem ipsum dolor - Sit amet</p>
 	</section>
 	<section>
-		<h2>Benefits</h2>
+		<h2>Services</h2>
 	</section>
 	<section>
-		<h2>Featured products</h2>
+		<h2>Nos produits</h2>
 	</section>
 </main>
 ```
@@ -56,7 +56,7 @@ Un seul `h1` recommandé!
 
 ### Les articles
 
-```html [3-10]
+```html
 <section>
 	<h2>Nos produits</h2>
 	<article>
@@ -77,8 +77,10 @@ Un seul `h1` recommandé!
 ```html [2-4]
 <body>
 	<header>
-		<img src="images/logo.png" alt="Neskawa"/>
+		<img src="images/logo.png" alt="Kiwi Coffee Revolution"/>
 	</header>
+	<nav>
+	</nav>
 </body>
 ```
 
@@ -91,7 +93,7 @@ Un seul `h1` recommandé!
 	<img src="images/logo.png" alt="Neskawa"/>
 	<nav>
 		<ul>
-			<li><a href="#produits">Produits</a></li>
+			<li><a href="a-propos.html">A Propos</a></li>
 		</ul>
 	<nav>
 </header>
@@ -103,12 +105,16 @@ Un seul `h1` recommandé!
 
 ```html
 <ul>
+	<li><a href="#accueil">Accueil</a></li>
 	<li><a href="#produits">Produits</a></li>
-	<li><a href="#avis">Avis</a></li>
 </ul>
 
-<section id="produits"></section>
-<section id="avis"></section>
+<section id="accueil">
+	<h1>Kiwi Coffee Revolution</h1>
+</section>
+<section id="produits">
+	<h2>Nos produits</h2>
+</section>
 ```
 
 ![Les ancres centrent le navigateurs sur les sections dont les id correspondent à leur cible](assets/images/anchors.png)
@@ -116,12 +122,12 @@ Un seul `h1` recommandé!
 ## Pied de page
 
 ```html
-<footer id="site-footer">
+<footer>
 	<div id="adress"></div>
 	<div id="facebook-feed"></div>
 	<div id="twitter-feed"></div>
 	<div id="newsletter"></div>
-	<p id="copyright">&copy; Neskawa 2021</p>
+	<p id="copyright">&copy; Kiwi Coffee Revolution 2021</p>
 </footer>
 ```
 
@@ -130,7 +136,7 @@ Un seul `h1` recommandé!
 ### Navigation de pied de page
 
 ```html
-<footer id="site-footer">
+<footer>
 	<nav>
 		<li><a href="#">Accueil</a></li>
 	</nav>
