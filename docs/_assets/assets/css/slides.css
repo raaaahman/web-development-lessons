@@ -1,0 +1,18 @@
+.reveal .slides section.split-panel-50-50 {
+	display: flex !important;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+
+.split-panel-50-50 > * {
+	flex: 1 0 50%;
+}
+
+.split-panel-50-50 > h1, .split-panel-50-50 > h2, .split-panel-50-50 > h3 {
+	flex: 1 0 100%;
+}
+
+.reveal .code-wrapper code {
+	white-space: pre-wrap;
+}

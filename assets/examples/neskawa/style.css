@@ -1,0 +1,25 @@
+header > img {
+    width: 40px;
+}
+
+main img {
+    width: 300px;
+}
+
+h1, p, section {
+    background-color: lightblue;
+}
+
+section:last-child {
+    color: Red;
+}
+
+p:last-of-type {
+    font-size: 36px;
+}
+
+body > header {
+    background-color: rgb(128, 32, 32);
+    position: sticky;
+    top: 0;
+}

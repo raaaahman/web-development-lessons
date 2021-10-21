@@ -124,7 +124,9 @@ a:visited {
 
 ---
 
-# CSS - Le modèle de boîte
+# CSS - Le modèle de boîte <!-- .slide: data-background-image="assets/images/pencil-box.jpeg" -->
+
+Sylvain Schellenberger
 
 ## Composition de la boîte
 
@@ -395,6 +397,39 @@ Le modèle de Boîte, Mozilla Developers Network: [https://developer.mozilla.org
 
 # La cascade
 
+## Surcharge
+
+```css
+body {
+	color: red;
+	color: blue;
+}
+```
+
+<iframe style="overflow: visible; width: 100%; height: 60vh;" 
+		srcdoc="
+				<head>
+					<style>
+						body {
+							color: red;
+							color: blue;
+						}
+					</style>
+				</head>
+				<body>
+					<h1>Bob l'éponge</h1>
+					<p>Cuisinier souriant</p>
+					<h2>Sa vie</h2>
+					<ul>
+						<li>Habite à <strong>Bikini Bottom</strong></li>
+						<li>Travaille au <strong>Crabe Croustillant</strong></li>
+					</ul>
+				</body>
+			">
+	</iframe>
+	
+## Heritage
+
 ```css
 body {
 	color: rgb(32, 32, 128);
@@ -416,7 +451,6 @@ body {
 					</style>
 				</head>
 				<body>
-					<img src=http://www.photoshoptuto.com/wp-content/ressources/crop/bob-eponge.jpg />
 					<h1>Bob l'éponge</h1>
 					<p>Cuisinier souriant</p>
 					<h2>Sa vie</h2>
@@ -424,23 +458,18 @@ body {
 						<li>Habite à <strong>Bikini Bottom</strong></li>
 						<li>Travaille au <strong>Crabe Croustillant</strong></li>
 					</ul>
-					<h2>Son oeuvre</h2>
-					<ol>
-						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film target=_blank>Bob l'éponge, le film</a></li>
-						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_Un_h%C3%A9ros_sort_de_l%27eau  target=_blank>Un héros sort de l'eau</a></li>
-						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_%C3%89ponge_en_eaux_troubles  target=_blank>Eponge en eaux troubles</a></li>
-					</ol>
 				</body>
 			">
 	</iframe>
 	
-## La surcharge
+## Surcharger l'héritage
 
 ```css [5-7]
 body {
 	background-color: #c4c4c4;
 	color: rgb(32, 32, 128);
 }
+
 h1 {
 	color: gold;
 }
@@ -464,7 +493,6 @@ h1 {
 					</style>
 				</head>
 				<body>
-					<img src=http://www.photoshoptuto.com/wp-content/ressources/crop/bob-eponge.jpg />
 					<h1>Bob l'éponge</h1>
 					<p>Cuisinier souriant</p>
 					<h2>Sa vie</h2>
@@ -472,18 +500,48 @@ h1 {
 						<li>Habite à <strong>Bikini Bottom</strong></li>
 						<li>Travaille au <strong>Crabe Croustillant</strong></li>
 					</ul>
-					<h2>Son oeuvre</h2>
-					<ol>
-						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film target=_blank>Bob l'éponge, le film</a></li>
-						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_Un_h%C3%A9ros_sort_de_l%27eau  target=_blank>Un héros sort de l'eau</a></li>
-						<li><a href=https://fr.wikipedia.org/wiki/Bob_l%27%C3%A9ponge,_le_film_:_%C3%89ponge_en_eaux_troubles  target=_blank>Eponge en eaux troubles</a></li>
-					</ol>
 				</body>
 			">
 	</iframe>
 
 ## Spécificité
 
-## Héritage
+```html
+<h1>Bob l'éponge</h1>
+<p id="tagline">Cuisinier souriant</p>
+<p>Héros de dessin animé, ainsi que de plusieurs films.</p>
+```
+
+```css
+#tagline {
+	font-size: 24px;
+}
+p {
+	font-size: 12px;
+}
+```
+
+##
+
+<iframe style="overflow: visible; width: 100%; height: 60vh;" 
+		srcdoc="
+				<head>
+					<style>
+						#tagline {
+							font-size: 24px;
+						}
+						p {
+							font-size: 12px;
+						}
+					</style>
+				</head>
+				<body>
+					<h1>Bob l'éponge</h1>
+					<p id="tagline">Cuisinier souriant</p>
+					<p>Héros de dessin animé, ainsi que de plusieurs films.</p>
+				</body>
+			">
+	</iframe>
 
 ## Reset et Normalize
+
