@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>CSS - Le modèle de boîte</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+    <link rel="stylesheet" href="./_assets/assets/css/quiz.css" />
+    <link rel="stylesheet" href="./_assets/assets/css/slides.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+# CSS - Le modèle de boîte
+
+Sylvain Schellenberger
+</script></section><section data-markdown><script type="text/template">## Composition de la boîte
+
+```css
+p {
+	margin: 2em;
+	border: 2px solid blue;
+	padding: 8px;
+}
+```
+
+![De l'extérieur vers l'intérieur, l'élément est composé d'une marge, une bordure et un padding.](assets/images/box-model.png)
+</script></section><section data-markdown><script type="text/template">## Marges <!-- .slide: class="split-panel-50-50" -->
+
+```css
+section {
+	margin-top: 0;
+	margin-right: 0;
+	margin-left: 0;
+	margin-bottom: 2em;
+}
+```
+
+![Chaque section dispose d'une marge basse qui l'espace de la section suivante](assets/images/margin.jpg)
+</script></section><section data-markdown><script type="text/template">## Padding 
+
+(~rembourrage, zone de remplissage)
+
+```css
+#accueil {
+	padding-top: 4em;
+	padding-right: 60%;
+	padding-bottom: 4em;
+	padding: 4em 60% 4em 0;
+}
+```
+
+![Le texte de la section de bienvenue est décalé par le rembourrage laissé entre l'extérieur de la section](assets/images/padding.jpg)
+</script></section><section data-markdown><script type="text/template">## Bordures <!-- .slide: class="split-panel-50-50" -->
+
+```css
+article {
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+}
+
+h2 {
+	border-bottom: 3px double grey;
+}
+```
+
+<div>
+<iframe style="background-color: white; width: 100%; min-height: 450px;" srcdoc="
+<head>
+	<style>
+		article {
+			border-style: solid;
+			border-width: 1px;
+			border-color: grey;
+			padding: 1em;
+		}
+		h2 {
+			border-bottom: 3px double grey;
+		}
+		img {
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<h2>Nos Produits</h2>
+	<article>
+		<img src=assets/examples/neskawa/images/arabica.jpeg />
+		<h3>Pur Arabica</h3>
+	</article>
+</body>"></iframe>
+</div>
+</script></section><section data-markdown><script type="text/template">## Dimensions d'un élément <!-- .slide: class="split-panel-50-50" -->
+
+```css
+img {
+	width: 100%;
+}
+```
+
+![Les dimensions de l'image sont proportionelles à la taille du parent.](assets/images/dimension-img.jpg)
+</script></section><section data-markdown><script type="text/template">## Dimensions standards
+
+```css
+p {
+	box-sizing: content-box;
+	width: 350px;
+	height: 150px;
+}
+```
+
+![La hauteur et largeur sont celles du contenu de la boîte.](assets/images/content-box.png)
+</script></section><section data-markdown><script type="text/template">## Dimensions à la bordure
+
+```css
+p {
+	box-sizing: border-box;
+	width: 350px;
+	height: 150px;
+}
+```
+
+![La hauteur et la largeur sont calculées à la bordure de l'élément](assets/images/border-box.png)
+</script></section><section data-markdown><script type="text/template">## Dimensions maximales <!-- .slide: class="split-panel-50-50" -->
+
+```css
+main {
+	min-width: 800px;
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+```
+
+![Le contenu fait la taille maximale autorisée, l'espace restant est réparti entre les deux côtés.](assets/images/dimension-max.jpg)
+</script></section><section data-markdown><script type="text/template">## Conteneurs centrés
+
+```html
+<section id="accueil">
+	<div class="container">
+		<h1>Kiwi Coffee Revolution</h1>
+		<p>Lorem ipsum dolor sit amet</p>
+	</div>
+</section>
+```
+
+```css
+#accueil {
+	background-image: url('images/coffee-cup.jpeg');
+}
+
+.container {
+	max-width: 960px;
+	margin: auto;
+}
+```
+</script></section><section data-markdown><script type="text/template">##
+
+![Les éléments sont centrés à l'intérieur de leurs parties](assets/images/centered-containers.jpg)
+<!-- .element: class="r-stretch" -->
+</script></section><section data-markdown><script type="text/template">## Inspecter la boîte
+
+<img alt="L'inspecteur du navigateur" src="assets/images/box-model-devtools.png" class="r-stretch"/>
+
+- `Ctrl + Maj + I`
+- `F12`
+- Clic droit > Inspecter
+</script></section><section data-markdown><script type="text/template">## Affichage "en bloc" <!-- .slide: class="split-panel-50-50" -->
+
+```css
+img {
+	display: block;
+}
+```
+
+<iframe style="background-color: white; min-height: 320px;" srcdoc="<head>
+	<style>
+		img {
+			width: 150px;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<img src=assets/images/little-box.jpg />
+	<img src=assets/images/la-joconde.jpg />
+</body>
+"></iframe>
+</script></section><section data-markdown><script type="text/template">## Affichage "en ligne" <!-- .slide: class="split-panel-50-50" -->
+
+```css
+li {
+	display: inline;
+}
+```
+
+<iframe style="background-color: white;" srcdoc="<head>
+	<style>
+		li {
+			display: inline;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>Acceuil</li>
+		<li>Services</li>
+		<li>Produits</li>
+		<li>A propos</li>
+	</ul>
+</body>
+"></iframe>
+</script></section><section data-markdown><script type="text/template">## Affichage "bloc en ligne"
+
+```css
+article {
+	display: inline-block;
+	width: 33%;
+	margin: 0 -1px;
+}
+```
+
+<iframe style="background-color: white; width: 100%; min-height: 300px;" srcdoc="<head>
+	<style>
+		img {
+			display: block;
+			width: 100%;
+		}
+		article {
+			display: inline-block;
+			width: 33%;
+			margin: 0 -1px;
+		}
+	</style>
+</head>
+<body>
+	 <article>
+        <h2>Pur Arabica</h2>
+        <img src=assets/examples/neskawa/images/arabica.jpeg >
+    </article>
+    <article>
+        <h2>Robusta</h2>
+        <img src=assets/examples/neskawa/images/robusta.jpeg >
+    </article>
+    <article>
+        <h2>Mocca</h2>
+        <img src=assets/examples/neskawa/images/mocca.jpeg >
+    </article>
+</body>
+"></iframe>
+</script></section><section data-markdown><script type="text/template">## Ressources
+
+- Le modèle de Boîte, Mozilla Developers Network: [https://developer.mozilla.org/fr/docs/Learn/CSS/Building_blocks/The_box_model](https://developer.mozilla.org/fr/docs/Learn/CSS/Building_blocks/The_box_model)
+- Inspirations pour portfolios: [https://dribbble.com/raaaahman/collections/5224514-portfolios](https://dribbble.com/raaaahman/collections/5224514-portfolios)
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Styles de boîtes
+
+Sylvain Schellenberger
+</script></section><section data-markdown><script type="text/template">## Arrondis
+
+```css
+p {
+	background-color: lightblue;
+	border-radius: 12px;
+}
+```
+
+<iframe style="background-color: white;" srcdoc="<head>
+	<style>
+		p {
+			border: 2px dashed blue;
+			background-color: lightblue;
+		border-radius: 12px;
+		}
+	</style>
+</head>
+<body>
+	<p>Le CSS, ça déboîte!</p>
+</body>
+"></iframe>
+</script></section><section data-markdown><script type="text/template">## Cercle parfait
+
+```css
+img {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+}
+```
+
+<iframe style="background-color: white; min-height: 175px;" srcdoc="<head>
+	<style>
+		img {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+		}
+	</style>
+</head>
+<body>
+	<img src=assets/images/little-box.jpg />
+</body>
+"></iframe>
+
+</script></section><section data-markdown><script type="text/template">## Ombres
+
+```css
+img {
+	box-shadow: 0 0 12px black; 
+ } 
+```
+
+<iframe style="background-color: white; min-height: 175px;" srcdoc="<head>
+	<style>
+		img {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			box-shadow: 0 0 12px black; 
+		}
+	</style>
+</head>
+<body>
+	<img src=assets/images/little-box.jpg />
+</body>
+"></iframe>
+</script></section><section data-markdown><script type="text/template">## Ressources
+
+- Arrières plans et bordures; Mozilla Developers Network, [https://developer.mozilla.org/fr/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders](https://developer.mozilla.org/fr/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders)</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"slide","progress":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

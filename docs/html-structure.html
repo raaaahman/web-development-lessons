@@ -21,9 +21,7 @@
 # HTML - Structure d'un site web 
 
 Sylvain Schellenberger
-</script></section><section data-markdown><script type="text/template">## Principales parties
-
-<!-- .slide: class="split-panel-50-50" -->
+</script></section><section data-markdown><script type="text/template">## Principales parties <!-- .slide: class="split-panel-50-50" -->
 
 ```html
 <body>
@@ -55,10 +53,10 @@ Un seul `main`!
 		<p id="tagline">Lorem ipsum dolor - Sit amet</p>
 	</section>
 	<section>
-		<h2>Benefits</h2>
+		<h2>Services</h2>
 	</section>
 	<section>
-		<h2>Featured products</h2>
+		<h2>Nos produits</h2>
 	</section>
 </main>
 ```
@@ -68,7 +66,7 @@ Un seul `main`!
 Un seul `h1` recommandé!
 </script></section><section data-markdown><script type="text/template">### Les articles
 
-```html [3-10]
+```html
 <section>
 	<h2>Nos produits</h2>
 	<article>
@@ -88,8 +86,10 @@ Un seul `h1` recommandé!
 ```html [2-4]
 <body>
 	<header>
-		<img src="images/logo.png" alt="Neskawa"/>
+		<img src="images/logo.png" alt="Kiwi Coffee Revolution"/>
 	</header>
+	<nav>
+	</nav>
 </body>
 ```
 
@@ -101,7 +101,7 @@ Un seul `h1` recommandé!
 	<img src="images/logo.png" alt="Neskawa"/>
 	<nav>
 		<ul>
-			<li><a href="#produits">Produits</a></li>
+			<li><a href="a-propos.html">A Propos</a></li>
 		</ul>
 	<nav>
 </header>
@@ -112,24 +112,28 @@ Un seul `h1` recommandé!
 
 ```html
 <ul>
+	<li><a href="#accueil">Accueil</a></li>
 	<li><a href="#produits">Produits</a></li>
-	<li><a href="#avis">Avis</a></li>
 </ul>
 
-<section id="produits"></section>
-<section id="avis"></section>
+<section id="accueil">
+	<h1>Kiwi Coffee Revolution</h1>
+</section>
+<section id="produits">
+	<h2>Nos produits</h2>
+</section>
 ```
 
 ![Les ancres centrent le navigateurs sur les sections dont les id correspondent à leur cible](assets/images/anchors.png)
 </script></section><section data-markdown><script type="text/template">## Pied de page
 
 ```html
-<footer id="site-footer">
+<footer>
 	<div id="adress"></div>
 	<div id="facebook-feed"></div>
 	<div id="twitter-feed"></div>
 	<div id="newsletter"></div>
-	<p id="copyright">&copy; Neskawa 2021</p>
+	<p id="copyright">&copy; Kiwi Coffee Revolution 2021</p>
 </footer>
 ```
 
@@ -137,7 +141,7 @@ Un seul `h1` recommandé!
 </script></section><section data-markdown><script type="text/template">### Navigation de pied de page
 
 ```html
-<footer id="site-footer">
+<footer>
 	<nav>
 		<li><a href="#">Accueil</a></li>
 	</nav>
@@ -145,7 +149,9 @@ Un seul `h1` recommandé!
 ```
 </script></section><section data-markdown><script type="text/template">## Ressources
 
-- Structure de site Web et de document, Mozilla Developers Network, [https://developer.mozilla.org/fr/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure](https://developer.mozilla.org/fr/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure)</script></section></section></div>
+- Structure de site Web et de document, Mozilla Developers Network, [https://developer.mozilla.org/fr/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure](https://developer.mozilla.org/fr/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure)
+- Générateur de faux texte, [https://www.faux-texte.com/](https://www.faux-texte.com/)
+- Images de substitution, [https://placeholder.com/](https://placeholder.com/) </script></section></section></div>
     </div>
 
     <script src="./dist/reveal.js"></script>

@@ -1,25 +1,37 @@
+* {
+    box-sizing:  border-box;
+}
+
+img {
+    width:  100%;
+}
+
+.container {
+    max-width:  960px;
+    margin: auto;
+    height:  100%;
+}
+
 header > img {
     width: 40px;
 }
 
-main img {
-    width: 300px;
-}
-
-h1, p, section {
-    background-color: lightblue;
-}
-
-section:last-child {
-    color: Red;
-}
-
-p:last-of-type {
-    font-size: 36px;
-}
-
-body > header {
-    background-color: rgb(128, 32, 32);
+header {
+    background-color: rgb(150, 150, 150);
     position: sticky;
     top: 0;
+}
+
+#accueil {
+    background-image: url('images/coffee-cup.jpeg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    padding: 2em 0;
+    color: #fff;
+    height: 100vh;
+}
+
+footer {
+    background-color: darkgrey;
 }

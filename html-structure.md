@@ -1,7 +1,7 @@
 ---
 title: HTML - Structure d'un site web
 date: 2021-10-18
-cover: assets/images/website-parts.png
+cover: assets/images/website-articles.png
 ---
 
 # HTML - Structure d'un site web 
@@ -146,3 +146,5 @@ Un seul `h1` recommandé!
 ## Ressources
 
 - Structure de site Web et de document, Mozilla Developers Network, [https://developer.mozilla.org/fr/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure](https://developer.mozilla.org/fr/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure)
+- Générateur de faux texte, [https://www.faux-texte.com/](https://www.faux-texte.com/)
+- Images de substitution, [https://placeholder.com/](https://placeholder.com/) 
