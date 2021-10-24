@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>CSS - Flexbox</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+    <link rel="stylesheet" href="./_assets/assets/css/quiz.css" />
+    <link rel="stylesheet" href="./_assets/assets/css/slides.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+# CSS - Flexbox
+
+Sylvain Schellenberger
+</script></section><section data-markdown><script type="text/template">## Disposition <!-- .slide: class="split-panel-50-50" -->
+
+<div>
+
+```html
+<div class="container">
+	<article>Projet 1</article>
+	<article>Projet 2</article>
+	<article>Projet 3</article>
+</div>
+```
+
+```css
+.container {
+	display: flex;
+}
+```
+
+</div>
+
+<iframe src="assets/examples/css-flexbox/disposition.html"></iframe>
+</script></section><section data-markdown><script type="text/template">## Redimensionnement des objets <!-- .slide: class="split-panel-50-50" -->
+
+```css
+article {
+	flex-grow: 1;
+	flex-shrink: 0;
+	flex-basis: 50%;
+}
+```
+
+<iframe src="assets/examples/css-flexbox/redimensionnement.html"></iframe>
+</script></section><section data-markdown><script type="text/template">## Retour à ligne <!-- .slide: class="split-panel-50-50" -->
+
+```css
+.container {
+	display: flex;
+	flex-wrap: wrap;
+}
+```
+
+<iframe src="assets/examples/css-flexbox/wrap.html"></iframe>
+</script></section><section data-markdown><script type="text/template">## Direction <!-- .slide: class="split-panel-50-50" -->
+
+```css
+.container {
+	display: flex;
+	flex-direction: column;
+}
+```
+
+<iframe src="assets/examples/css-flexbox/direction.html"></iframe>
+</script></section><section data-markdown><script type="text/template">## Alignement (axe principal) <!-- .slide: class="split-panel-50-50" -->
+
+```css
+.container {
+    height: 200px;
+    display: flex;
+	flex-direction: column;
+    justify-content: space-between;
+}
+```
+
+<iframe src="assets/examples/css-flexbox/align-main-axis.html"></iframe>
+</script></section><section data-markdown><script type="text/template">## Alignement (axe croisé) <!-- .slide: class="split-panel-50-50" -->
+
+```css
+.container {
+    height: 200px;
+    display: flex;
+	flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+```
+
+<iframe src="assets/examples/css-flexbox/align-cross-axis.html"></iframe>
+</script></section><section data-markdown><script type="text/template">## Directions et alignement
+
+![L'axe principal est vertical lorsque la direction est en colonne, et horizontal lorsque la direction est en rang. Pour l'axe croisé, c'est l'inverse](assets/images/flex-direction.png)
+</script></section><section data-markdown><script type="text/template">## Mise en pratique <!-- .slide: class="split-panel-50-50" -->
+
+```css
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.container > article {
+    box-sizing: border-box;
+    flex-basis: 30%;
+    background-color: lightblue;
+    padding: 1em;
+}
+
+img {
+    width: 100%;
+}
+```
+
+
+<iframe src="assets/examples/css-flexbox/practice.html"></iframe>
+</script></section><section data-markdown><script type="text/template">## Ressources
+
+- Flexbox, Mozilla Developers Network, [https://developer.mozilla.org/fr/docs/Learn/CSS/CSS_layout/Flexbox](https://developer.mozilla.org/fr/docs/Learn/CSS/CSS_layout/Flexbox)
+- A complete Guide to Flexbox, CSS Tricks, [https://css-tricks.com/snippets/css/a-guide-to-flexbox/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- Flexbox Froggy, [https://flexboxfroggy.com/#fr](https://flexboxfroggy.com/#fr)
+- Solved by flexbox, Philip Walton, [https://philipwalton.github.io/solved-by-flexbox/](https://philipwalton.github.io/solved-by-flexbox/)</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"slide","progress":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

@@ -1,7 +1,6 @@
 .reveal .slides section.split-panel-50-50 {
 	display: flex !important;
 	flex-wrap: wrap;
-	align-items: center;
 }
 
 
@@ -13,6 +12,14 @@
 	flex: 1 0 100%;
 }
 
+.split-panel-50-50 > img {
+	align-self: center;
+}
+
 .reveal .code-wrapper code {
 	white-space: pre-wrap;
+}
+
+iframe {
+	border: none;
 }
