@@ -1,7 +1,7 @@
 ---
 title: CSS - Flexbox
 date: 2021-10-24
-cover:
+cover: assets/images/flex-direction.png
 ---
 
 # CSS - Flexbox
