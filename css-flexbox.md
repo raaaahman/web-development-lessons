@@ -28,7 +28,33 @@ Sylvain Schellenberger
 
 </div>
 
-<iframe src="assets/examples/css-flexbox/disposition.html"></iframe>
+<iframe srcdoc="<head>
+    <style>
+        .container {
+            display: flex;
+        }
+        article {
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid blue;
+        }
+        article:nth-child(odd) {
+            background-color: lightblue;
+            color: darkslategray;
+        }
+        article:nth-child(even) {
+            background-color: cornflowerblue;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <div class=container>
+        <article>Projet 1</article>
+        <article>Projet 2</article>
+        <article>Projet 3</article>
+    </div>
+</body>"></iframe>
 
 ## Redimensionnement des objets <!-- .slide: class="split-panel-50-50" -->
 
@@ -40,7 +66,37 @@ article {
 }
 ```
 
-<iframe src="assets/examples/css-flexbox/redimensionnement.html"></iframe>
+<iframe srcdoc="
+<head>
+	<style>
+        .container {
+            display: flex;
+        }
+        article {
+            box-sizing: border-box;
+            border: 1px solid blue;
+            text-align: center;
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 50%;
+        }
+        article:nth-child(odd) {
+            background-color: lightblue;
+            color: darkslategray;
+        }
+        article:nth-child(even) {
+            background-color: cornflowerblue;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <div class=container>
+        <article>Projet 1</article>
+        <article>Projet 2</article>
+        <article>Projet 3</article>
+    </div>
+</body>"></iframe>
 
 ## Retour à ligne <!-- .slide: class="split-panel-50-50" -->
 
@@ -51,7 +107,37 @@ article {
 }
 ```
 
-<iframe src="assets/examples/css-flexbox/wrap.html"></iframe>
+<iframe srcdoc="<head>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        article {
+            box-sizing: border-box;
+            border: 1px solid blue;
+            text-align: center;
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 50%;
+        }
+        article:nth-child(odd) {
+            background-color: lightblue;
+            color: darkslategray;
+        }
+        article:nth-child(even) {
+            background-color: cornflowerblue;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <div class=container>
+        <article>Projet 1</article>
+        <article>Projet 2</article>
+        <article>Projet 3</article>
+    </div>
+</body>"></iframe>
 
 ## Direction <!-- .slide: class="split-panel-50-50" -->
 
@@ -62,7 +148,38 @@ article {
 }
 ```
 
-<iframe src="assets/examples/css-flexbox/direction.html"></iframe>
+<iframe srcdoc="<head>
+<style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+			flex-direction: column;
+        }
+        article {
+            box-sizing: border-box;
+            border: 1px solid blue;
+            text-align: center;
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 50%;
+        }
+        article:nth-child(odd) {
+            background-color: lightblue;
+            color: darkslategray;
+        }
+        article:nth-child(even) {
+            background-color: cornflowerblue;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <div class=container>
+        <article>Projet 1</article>
+        <article>Projet 2</article>
+        <article>Projet 3</article>
+    </div>
+</body>"></iframe>
 
 ## Alignement (axe principal) <!-- .slide: class="split-panel-50-50" -->
 
@@ -75,7 +192,37 @@ article {
 }
 ```
 
-<iframe src="assets/examples/css-flexbox/align-main-axis.html"></iframe>
+<iframe srcdoc="
+<head>
+	<style>
+        .container {
+            height: 200px;
+            display: flex;
+			flex-direction: column;
+            justify-content: space-between;
+        }
+        article {
+            box-sizing: border-box;
+            border: 1px solid blue;
+            text-align: center;
+        }
+        article:nth-child(odd) {
+            background-color: lightblue;
+            color: darkslategray;
+        }
+        article:nth-child(even) {
+            background-color: cornflowerblue;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <div class=container>
+        <article>Projet 1</article>
+        <article>Projet 2</article>
+        <article>Projet 3</article>
+    </div>
+</body>"></iframe>
 
 ## Alignement (axe croisé) <!-- .slide: class="split-panel-50-50" -->
 
@@ -89,7 +236,38 @@ article {
 }
 ```
 
-<iframe src="assets/examples/css-flexbox/align-cross-axis.html"></iframe>
+<iframe srcdoc="
+<head>
+	<style>
+        .container {
+            height: 200px;
+            display: flex;
+			flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        article {
+            box-sizing: border-box;
+            border: 1px solid blue;
+            text-align: center;
+        }
+        article:nth-child(odd) {
+            background-color: lightblue;
+            color: darkslategray;
+        }
+        article:nth-child(even) {
+            background-color: cornflowerblue;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <div class=container>
+        <article>Projet 1</article>
+        <article>Projet 2</article>
+        <article>Projet 3</article>
+    </div>
+</body>"></iframe>
 
 ## Directions et alignement
 
@@ -104,21 +282,57 @@ article {
     justify-content: space-between;
     align-items: stretch;
 }
-
 .container > article {
     box-sizing: border-box;
     flex-basis: 30%;
     background-color: lightblue;
     padding: 1em;
 }
-
 img {
     width: 100%;
 }
 ```
 
 
-<iframe src="assets/examples/css-flexbox/practice.html"></iframe>
+<iframe srcdoc="
+<head>
+	<style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+        .container > article {
+            box-sizing: border-box;
+            flex-basis: 30%;
+            background-color: lightblue;
+            padding: 1em;
+        }
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class=container>
+        <article>
+            <h3>Projet 1</h3>
+            <img src=https://via.placeholder.com/300 alt=Projet1 >
+            <p>Nemo quaeso miretur, si post exsudatos labores itinerum longos congestosque adfatim commeatus.</p>
+        </article>
+        <article>
+            <h3>Projet 2</h3>
+            <img src=https://via.placeholder.com/300 alt=Projet2 >
+            <p>Ut enim benefici liberalesque sumus, non ut exigamus gratiam .</p>
+        </article>
+        <article>
+            <h3>Projet 3</h3>
+            <img src=https://via.placeholder.com/300 alt=Projet3 >
+            <p>Illud tamen clausos vehementer angebat quod captis navigiis, quae frumenta vehebant per flumen.</p>
+        </article>
+    </div>
+</body>"></iframe>
 
 ## Ressources
 
