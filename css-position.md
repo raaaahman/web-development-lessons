@@ -1,10 +1,13 @@
 ---
 title: CSS - Le positionnement
 date: 2021-10-25
-cover:
+cover: assets/images/position.jpeg
 ---
 
 # CSS - Le positionnement
+
+![Les éléments HTML jouent au Twister.](assets/images/position.jpeg) 
+<!-- .element: class="r-stretch" -->
 
 Sylvain Schellenberger
 

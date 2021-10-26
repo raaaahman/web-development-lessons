@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>CSS - La cascade</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+    <link rel="stylesheet" href="./_assets/assets/css/quiz.css" />
+    <link rel="stylesheet" href="./_assets/assets/css/slides.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+# CSS - La cascade
+
+![La cascade éclabousse Bruce.](assets/images/waterfall.jpeg)
+
+Sylvain Schellenberger
+</script></section><section data-markdown><script type="text/template">## Ordre d'apparition <!-- .slide: class="split-panel-50-50" -->
+
+```css
+p {
+	color: red;
+	color: green;
+}
+
+p {
+	color: blue;
+}
+```
+
+<iframe style="overflow: visible; width: 100%;" 
+	srcdoc="
+			<head>
+				<style>
+					p {
+						color: red;
+						color: green;
+					}
+					p {
+						color: blue;
+					}
+				</style>
+			</head>
+			<body>
+				<h1>Bob l'éponge</h1>
+				<p>Cuisinier souriant</p>
+				<p>Héros de dessin animé, ainsi que de plusieurs films.</p>
+				<h2>Sa vie</h2>
+				<p>Il habite à Bikini Bottom</p>
+				<p>Travaille au Crabe Croustillant</p>
+			</body>
+		">
+	</iframe>
+	</script></section><section data-markdown><script type="text/template">## Spécificité <!-- .slide: class="split-panel-50-50" -->
+
+<div>
+
+```html
+<h1>Bob l'éponge</h1>
+<p id="tagline">Cuisinier souriant</p>
+<p>Héros de dessin animé, ainsi que de plusieurs films.</p>
+```
+
+```css
+#tagline {
+	color: gold;
+}
+p {
+	color: blue;
+}
+```
+
+</div>
+
+<iframe style="overflow: visible; width: 100%;" 
+		srcdoc="
+				<head>
+					<style>
+						#tagline {
+							color: gold;
+						}
+						p {
+							color: blue;
+						}
+					</style>
+				</head>
+			<body>
+				<h1>Bob l'éponge</h1>
+				<p id=tagline>Cuisinier souriant</p>
+				<p>Héros de dessin animé, ainsi que de plusieurs films.</p>
+				<h2>Sa vie</h2>
+				<p>Il habite à Bikini Bottom</p>
+				<p>Travaille au Crabe Croustillant</p>
+			</body>
+			">
+	</iframe>
+	</script></section><section data-markdown><script type="text/template">## Spécificité, les priorités <!-- .slide: class="split-panel-50-50" -->
+
+1. Les sélecteurs d'identifiant (ex: `#tagline`)
+2. Les sélecteurs de classe (ex: `.container`)
+3. Les sélecteurs d'éléments (ex: `p`)
+</script></section><section data-markdown><script type="text/template">## Héritage <!-- .slide: class="split-panel-50-50" -->
+
+<div>
+
+```html
+<body>
+	<h1>Bob l'éponge</h1>
+	<p id=tagline>Cuisinier souriant</p>
+	<p>Héros de dessin animé, ainsi que de plusieurs films.</p>
+	<h2>Sa vie</h2>
+	<p>Il habite à Bikini Bottom</p>
+	<p>Travaille au Crabe Croustillant</p>
+</body>
+```
+
+```css
+body {
+	color: blue;
+}
+```
+
+</div>
+
+<iframe style="overflow: visible; width: 100%;" 
+		srcdoc="
+				<head>
+					<style>
+						body {
+							color: blue;
+						}
+					</style>
+				</head>
+				<body>
+					<h1>Bob l'éponge</h1>
+					<p id=tagline>Cuisinier souriant</p>
+					<p>Héros de dessin animé, ainsi que de plusieurs films.</p>
+					<h2>Sa vie</h2>
+					<p>Il habite à Bikini Bottom</p>
+					<p>Travaille au Crabe Croustillant</p>
+				</body>
+			">
+	</iframe>
+	</script></section><section data-markdown><script type="text/template">## Surcharger l'héritage <!-- .slide: class="split-panel-50-50" -->
+
+```css
+h1 {
+	color: gold;
+}
+
+body {
+	color: blue;
+}
+```
+
+<iframe style="overflow: visible; width: 100%;" 
+		srcdoc="
+				<head>
+					<style>
+						h1 {
+							color: gold;
+						}
+						body {
+							color: blue;
+						}
+					</style>
+				</head>
+				<body>
+					<h1>Bob l'éponge</h1>
+					<p>Cuisinier souriant</p>
+					<p>Héros de dessin animé, ainsi que de plusieurs films.</p>
+					<h2>Sa vie</h2>
+					<p>Habite à Bikini Bottom</p>
+					<p>Crabe Croustillant</p>
+				</body>
+			">
+	</iframe>
+	</script></section><section data-markdown><script type="text/template">## Propriétés héritables <!-- .slide: class="split-panel-50-50" -->
+
+<div>
+
+Héritables:
+
+- color
+- font-family, font-size, font-weight
+- text-align
+
+</div>
+
+<div>
+
+Non héritables:
+
+- background-color
+- margin, padding, border
+- display
+- width, height
+
+</div>
+</script></section><section data-markdown><script type="text/template">## Importance <!-- .slide: class="split-panel-50-50" -->
+
+<div>
+
+```html
+<h1 id="pagetitle">Bob l'éponge</h1>
+<p>Cuisinier souriant</p>
+```
+
+```css
+h1 {
+	color: red !important;
+}
+#pagetitle {
+	color: gold;
+}
+```
+
+</div>
+
+<iframe style="overflow: visible; width: 100%;" 
+		srcdoc="
+				<head>
+					<style>
+						h1 {
+							color: red !important;
+						}
+						#pagetitle {
+							color: gold;
+						}
+						body {
+							color: blue;
+						}
+											</style>
+				</head>
+				<body>
+					<h1 id=pagetitle>Bob l'éponge</h1>
+					<p>Cuisinier souriant</p>
+					<p>Héros de dessin animé, ainsi que de plusieurs films.</p>
+					<h2>Sa vie</h2>
+					<p>Habite à Bikini Bottom</p>
+					<p>Crabe Croustillant</p>
+				</body>
+			">
+	</iframe>
+</script></section><section data-markdown><script type="text/template">## Normalize.css
+
+```html
+<link rel="stylesheet" href="normalize.css">
+<link rel="stylesheet" href="mon-style.css">
+```
+
+[https://necolas.github.io/normalize.css/latest/normalize.css](https://necolas.github.io/normalize.css/latest/normalize.css)
+</script></section><section data-markdown><script type="text/template">## Ressources
+
+- Cascade et héritage, Mozilla Developers Network, [https://developer.mozilla.org/fr/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance](https://developer.mozilla.org/fr/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
+</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"slide","progress":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
