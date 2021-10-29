@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Responsive Web Design</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+    <link rel="stylesheet" href="./_assets/assets/css/quiz.css" />
+    <link rel="stylesheet" href="./_assets/assets/css/slides.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+# Responsive Web Design
+
+![L'eau s'adapte à son conteneur. Votre site doit être comme l'eau.](assets/images/responsive-water.png)
+
+Sylvain Schellenberger
+</script></section><section data-markdown><script type="text/template">## Tailles d'écrans
+
+![Les écrans peuvent avoir toutes sortes de dimensions.](assets/images/responsive-screens.png)
+
+Liste des résolutions communes d'écrans: [https://experienceleague.adobe.com/docs/target/using/experiences/vec/mobile-viewports.html?lang=fr](https://experienceleague.adobe.com/docs/target/using/experiences/vec/mobile-viewports.html?lang=fr)
+</script></section><section data-markdown><script type="text/template">## Fenêtre du navigateur
+
+![Les fenêtres de navigateur mobile sont souvent plus large que la résolution de l'écran.](assets/images/mobile-viewport.png)
+<!-- .element: class="r-stretch" -->
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+</script></section><section data-markdown><script type="text/template">## Centrer le site <!-- .slide: class="split-panel-50-50" -->
+
+<div>
+
+```html
+<header>
+	<div class="container">
+	</div>
+</header>
+<main>
+	<div class="container">
+	</div>
+</main>
+<footer>
+	<div class="container">
+	</div>
+</footer>
+```
+
+```css
+.container {
+	max-width: 960px;
+	margin: auto;
+}
+```
+
+</div>
+
+![Les différentes parties du site sont centrées](assets/images/centered-containers.jpg)
+</script></section><section data-markdown><script type="text/template">## Adapter les images <!-- .slide: class="split-panel-50-50" -->
+
+<div>
+
+```html
+<article>
+	<img src="https://via.placeholder.com/900">
+</article>
+```
+
+```css
+img {
+	widt: 100%;
+}
+```
+
+</div>
+
+![Les images s'adapte à leur conteneur.](assets/images/dimension-img.jpg)
+</script></section><section data-markdown><script type="text/template">## Vue adaptive (navigateur)
+
+`Menu > Plus d'outils > Outils de développement > Inspecteur > Vue adaptive`
+
+OU `Ctrl + Maj + M` (Firefox)
+</script></section><section data-markdown><script type="text/template">## Media queries
+
+```css
+@media screen and (min-width: 960px) {
+	article {
+		flex-basis: 33%;
+	}
+}
+```
+
+Media queries, Mozilla Developers Network, [https://developer.mozilla.org/fr/docs/Web/CSS/Media_Queries/Using_media_queries](https://developer.mozilla.org/fr/docs/Web/CSS/Media_Queries/Using_media_queries)
+</script></section><section data-markdown><script type="text/template">## Exemple <!-- .slide: class="split-panel-50-50" -->
+
+```css
+/* Pour les mobiles */
+article {
+	flex-basis: 100%;
+}
+
+/* Pour les tablettes */
+@media screen and (min-width: 768px) {
+	article {
+		flex-basis: 50%;
+	}
+}
+
+/* Pour les moniteurs */
+@media screen and (min-width: 960px) {
+	article {
+		flex-basis: 33%;
+	}
+}
+```
+
+![Le même site s'adapte à différentes tailles d'écrans.](assets/images/responsive-screens_vertical.png)
+</script></section><section data-markdown><script type="text/template">## Tailles de polices relatives
+
+```css
+html {
+    font-size: 1em;
+}
+h1 {
+    font-size: 2rem;
+}
+@media screen and (min-width: 900px) {
+	h1 {
+		font-size: 4rem;
+	}
+}
+p {
+    font-size: 1rem;
+}
+```
+</script></section><section data-markdown><script type="text/template">## Ressources
+
+Responsive Design, Mozilla DEvelopers Network, [https://developer.mozilla.org/fr/docs/Learn/CSS/CSS_layout/Responsive_Design](https://developer.mozilla.org/fr/docs/Learn/CSS/CSS_layout/Responsive_Design)
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Meilleure gestion du responsive
+
+Sylvain Schellenberger
+</script></section><section data-markdown><script type="text/template">## Fonctionnalité disponibles
+
+```css
+@media screen and (hover: hover) {
+	a:hover {
+		background-color: coral;
+	}
+}
+```
+
+<iframe srcdoc="
+<head>
+	<style>
+		@media screen and (hover: hover) {
+			a:hover {
+				background-color: coral;
+			}
+		}
+	</style>
+</head>
+<body>
+	<a href=google.com >Click me!</a>
+</body>"></iframe>
+
+Media queries, Mozilla Developers Network, [https://developer.mozilla.org/fr/docs/Web/CSS/Media_Queries/Using_media_queries](https://developer.mozilla.org/fr/docs/Web/CSS/Media_Queries/Using_media_queries)
+</script></section><section data-markdown><script type="text/template">## Charger des images adaptées
+
+```html
+<picture>
+  <source 
+    srcset="https://via.placeholder.com/320"
+    media="(min-width: 960px)"
+  />
+  <source 
+    srcset="https://via.placeholder.com/384"
+    media="(min-width: 768px)"
+  />
+  <img 
+    src="https://via.placeholder.com/720" 
+    alt="My article image"
+  />
+</picture>
+```
+
+A guide to responsive images, CSS Ticks, [https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/#using-picture](https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/#using-picture)
+</script></section><section data-markdown><script type="text/template">## Vérifier le support par les navigateurs
+
+[https://caniuse.com/](https://caniuse.com/)
+</script></section><section data-markdown><script type="text/template">## Utiliser des polyfills
+
+- Comprendre les Polyfills, la-cacade.io, [https://la-cascade.io/html5-comprendre-les-polyfills-shivs-et-shims/](https://la-cascade.io/html5-comprendre-les-polyfills-shivs-et-shims/)
+- Modernizr, Github, [https://github.com/Modernizr/Modernizr](https://github.com/Modernizr/Modernizr)
+</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"slide","progress":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
