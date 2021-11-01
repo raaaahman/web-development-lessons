@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Introduction à Bootstrap</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+    <link rel="stylesheet" href="./_assets/assets/css/quiz.css" />
+    <link rel="stylesheet" href="./_assets/assets/css/slides.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+# Bootstrap
+
+![Strapped boots](/assets/images/dr-martens.jpeg)
+<!-- .element: class="r-stretch" -->
+
+Sylvain Schellenberger
+</script></section><section data-markdown><script type="text/template">## Un Framework CSS
+
+![Les éléments de Bootstrap sont comme des briques de lego à assembler.](assets/images/framework.png)
+<!-- .element: class="r-stretch" -->
+
+Créé par la société Twitter. Ex: [Centre d'assistance Twitter](https://help.twitter.com)
+</script></section><section data-markdown><script type="text/template">## Bénéfices
+
+- Responsive Web Design
+- Pas de CSS nécessaire
+- Support et communauté
+</script></section><section data-markdown><script type="text/template">## Utiliser Bootstrap dans un projet
+
+```html
+<head>
+	<!-- ... -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+	<!-- ... -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">__SCRIPT_END__
+</body>
+```
+
+[Template de démarrage](https://help.twitter.com)
+</script></section><section data-markdown><script type="text/template">## Conteneurs <!-- .slide: class="split-panel-50-50" -->
+
+```html
+<header>
+ <div class="container-fluid">
+ </div>
+</header>
+<body>
+ <div class="container">
+ </div>
+</body>
+```
+
+![Le conteneur fluide prend la largeur totale de l'écran, le conteur donne une taille maximale au contenu et le centre..](assets/images/bootstrap-containers.png)
+</script></section><section data-markdown><script type="text/template">## Colonnes <!-- .slide: class="split-panel-50-50" -->
+
+```html
+<div class="container">
+	<div class="row">
+		<div class="col-6"></div>
+		<div class="col-6"></div>
+		<div class="col-4"></div>
+		<div class="col-4"></div>
+		<div class="col-4"></div>
+	</div>
+</div>
+```
+
+![Les éléments s'étedant sur 6 colonnes prennent la moitié de l'écran, ceux s'étendant sur 4 colonnes prennent la totalité de l'écran](/assets/images/bootstrap-columns.png)
+</script></section><section data-markdown><script type="text/template">## Gouttières
+
+```html
+<div class="row gx-12 gy-18">
+</div>
+```
+
+![Les éléments sont espacés horizontalement les uns des autres par des espaces de 12 pixels et verticalement par un espace de 18 pixels.](assets/images/bootstrap-gutters.png)
+<!-- .element: class="r-stretch" -->
+</script></section><section data-markdown><script type="text/template">## Points de rupture <!-- .slide: class="split-panel" -->
+
+| Breakpoint | Infix | Size |
+| --- | --- | --- |
+| Extra Small |  | <576px |
+| Small | sm | >= 576px |
+| Medium | md | >= 768px |
+| Large | lg | >= 992px |
+| Extra Large | xl | >= 1200px |
+| Extra extra Large | xxl | >= 1400px | 
+
+![responsive-screens_vertical.png](/assets/images/responsive-screens_vertical.png)
+</script></section><section data-markdown><script type="text/template">## Colonnes adaptables
+
+```html
+<div class="container">
+	<div class="row">
+		<div class="col-12 col-sm-6 col-lg-3"></div>
+		<div class="col-12 col-sm-6 col-lg-3"></div>
+		<div class="col-12 col-sm-6 col-lg-3"></div>
+		<div class="col-12 col-sm-6 col-lg-3"></div>
+	</div>
+</div>
+```
+
+![Sur un écran d'ordinateur, il y a quatre éléments par ligne, contre deux sur une tablette et un seul sur un smartphone](assets/images/bootstrap-columns-responsive.png)
+<!-- .element: class="fragment" -->
+</script></section><section data-markdown><script type="text/template">## Des composants
+
+- Des barres de navigation: [https://getbootstrap.com/docs/5.0/components/navs-tabs/](https://getbootstrap.com/docs/5.0/components/navs-tabs/)
+- Des cartes: [https://getbootstrap.com/docs/5.0/components/card/](https://getbootstrap.com/docs/5.0/components/card/)
+- Des listes: [https://getbootstrap.com/docs/5.0/components/list-group/](https://getbootstrap.com/docs/5.0/components/list-group/)
+-Des boutons: [https://getbootstrap.com/docs/5.0/components/buttons/](https://getbootstrap.com/docs/5.0/components/buttons/)
+
+Et bien plus.
+</script></section><section data-markdown><script type="text/template">## Des utilitaires
+
+- Pour les textes: [https://getbootstrap.com/docs/5.0/content/typography/](https://getbootstrap.com/docs/5.0/content/typography/)
+- Pour les images: [https://getbootstrap.com/docs/5.0/content/images/](https://getbootstrap.com/docs/5.0/content/images/)
+- Pour les fonds: [https://getbootstrap.com/docs/5.0/utilities/background/](https://getbootstrap.com/docs/5.0/utilities/background/)
+- Pour les couleurs: [https://getbootstrap.com/docs/5.0/utilities/colors/](https://getbootstrap.com/docs/5.0/utilities/colors/)
+- Pour les espacements: [https://getbootstrap.com/docs/5.0/utilities/spacing/](https://getbootstrap.com/docs/5.0/utilities/spacing/)</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"slide","progress":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

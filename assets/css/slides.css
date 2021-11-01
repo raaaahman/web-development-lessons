@@ -1,18 +1,19 @@
-.reveal .slides section.split-panel-50-50 {
+.reveal .slides section.split-panel-50-50,
+.reveal .slides section.split-panel {
 	display: flex !important;
 	flex-wrap: wrap;
 }
-
 
 .split-panel-50-50 > * {
 	flex: 1 0 50%;
 }
 
-.split-panel-50-50 > h1, .split-panel-50-50 > h2, .split-panel-50-50 > h3 {
+.split-panel-50-50 > h1, .split-panel-50-50 > h2, .split-panel-50-50 > h3,
+.split-panel > h1, .split-panel > h2, .split-panel > h3 {
 	flex: 1 0 100%;
 }
 
-.split-panel-50-50 > img {
+.split-panel-50-50 > img, .split-panel > img {
 	align-self: center;
 }
 
