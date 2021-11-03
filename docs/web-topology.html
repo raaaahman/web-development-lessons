@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Topologie du Web</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+    <link rel="stylesheet" href="./_assets/assets/css/quiz.css" />
+    <link rel="stylesheet" href="./_assets/assets/css/slides.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+# Topologie du web
+
+![Différents sites web](assets/images/web-topology.png)
+<!-- .element: class="r-stretch" -->
+
+Sylvain Schellenberger
+</script></section><section data-markdown><script type="text/template">## Site vitrine
+
+Resume (CV), Portfolio
+
+<div class="row r-stretch">
+
+![wordpress](assets/images/wordpress.png)
+
+![drupal](assets/images/drupal.png)
+
+![joomla](assets/images/joomla.png)
+
+</div>
+
+**Business model:** Conversion (prospect -> client)
+</script></section><section data-markdown><script type="text/template">## Blog
+
+Site d'informations
+
+<div class="row r-stretch">
+
+![wordpress](assets/images/wordpress.png)
+
+![drupal](assets/images/drupal.png)
+
+![joomla](assets/images/joomla.png)
+
+</div>
+
+**Business Model:** Affiliation, Publicité
+</script></section><section data-markdown><script type="text/template">## Réseau Social
+
+Messagerie instantanée
+
+<div class="row r-stretch">
+
+![facebook](assets/images/facebook.png)
+
+![instagram](assets/images/instagram.png)
+
+![youtube](assets/images/youtube.png)
+
+</div>
+
+**Business Model:** Publicité, Vente de données
+</script></section><section data-markdown><script type="text/template">## E-commerce
+
+Boutique, merchandising
+
+<div class="row r-stretch">
+
+![prestashop](assets/images/prestashop.png)
+
+![magento](assets/images/magento.png)
+
+![woocommerce](assets/images/woocommerce.png)
+
+</div>
+
+**Business Model:** Conversion
+</script></section><section data-markdown><script type="text/template">## Place de marché
+
+<div class="row r-stretch">
+
+![amazon](assets/images/amazon.png)
+
+![leboncoin](assets/images/leboncoin.png)
+
+![ebay](assets/images/ebay.png)
+
+</div>
+
+**Business Model:** Conversion, Abonnement, Vente de données?
+</script></section><section data-markdown><script type="text/template">## SaaS
+
+<div class="row r-stretch">
+
+![salesforce](assets/images/salesforce.png)
+
+![shopify](assets/images/shopify.png)
+
+![clickfunnels](assets/images/clickfunnels.png)
+
+</div>
+
+**Business Model:** Abonnement, Commission</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"slide","progress":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

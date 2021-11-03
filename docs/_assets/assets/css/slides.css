@@ -21,6 +21,12 @@
 	white-space: pre-wrap;
 }
 
+.row {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
 iframe {
 	border: none;
 }
