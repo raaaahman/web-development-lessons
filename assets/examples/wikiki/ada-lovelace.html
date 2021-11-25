@@ -2,19 +2,36 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Ada Lovelace - Wikiki</title>
-	<link rel="icon" type="image/png" href="images/chimp.png"/>
-	<link rel="stylesheet" href="style.css"/>
+	<link href="normalize.css" rel="stylesheet"/>
+	<meta name="viewport" content="width=device-width"/>
+	<link href="style.css" rel="stylesheet"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Roboto&display=swap" rel="stylesheet"> 
 </head>
 <body>
+	<ul id="menu">
+		<li class="menu-link"><a href="#">Lien</a></li>
+		<li class="menu-link"><a href="#">Lien</a></li>
+		<li class="menu-link"><a href="#">Lien</a></li>
+		<li class="menu-link"><a href="#">Lien</a></li>
+		<li class="menu-link"><a href="#">Lien</a></li>
+	</ul>
 	<h1>Ada Lovelace</h1>
 	<p>Première programmeuse de l'histoire</p>
 
-	<figure>
-		<img src="images/ada-lovelace.jpeg" alt="Ada Lovelace" style="width: 33%;">
-		<figcation>Ada Lovelace a créé le premier programme informatique, avant même que les ordinateurs n'existent!</figcation>
-	</figure>
+	<section class="flex">
+		<figure>
+			<img src="images/ada-lovelace.jpeg" alt="Ada Lovelace"/>
+			<figcation>Ada Lovelace a créé le <strong>premier programme informatique</strong>, avant même que les <em>ordinateurs</em> n'existent!</figcation>
+		</figure>
+
+		<figure>
+			<img src="images/01 lord byron.jpg"/>
+			<figcaption>Lord Byron</figcaption>
+		</figure>
+	</section>
 
 	<h2>Biographie</h2>
 	<p>Né en <time datetime="1816">1816</time>, fille du poète <a href="georges-gordon-byron.html">Georges Gordon Byron</a> et élevée par sa mère <a href="annabella-milblanke.html">Annabella Milblanke</a>, Ada reçoit très jeune une éducation mathématiques et scientifique.</p>

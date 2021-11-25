@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    height: 600px;
+    display: flex;
+
+}
+
+#first {
+    background-color: red;
+}
+
+article {
+    box-sizing: border-box;
+    background-color: aqua;
+    border: 1px solid blue;
+    flex-shrink: 1;
+    flex-grow: 0;
+    flex-basis: 50%;
+}

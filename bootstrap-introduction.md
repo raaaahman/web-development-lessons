@@ -6,7 +6,7 @@ cover: assets/images/dr-martens.jpeg
 
 # Bootstrap
 
-![Strapped boots](/assets/images/dr-martens.jpeg)
+![Strapped boots](assets/images/dr-martens.jpeg)
 <!-- .element: class="r-stretch" -->
 
 Sylvain Schellenberger
@@ -31,10 +31,6 @@ Créé par la société Twitter. Ex: [Centre d'assistance Twitter](https://help.
 	<!-- ... -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
-<body>
-	<!-- ... -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
 ```
 
 [Template de démarrage](https://help.twitter.com)
@@ -68,7 +64,7 @@ Créé par la société Twitter. Ex: [Centre d'assistance Twitter](https://help.
 </div>
 ```
 
-![Les éléments s'étedant sur 6 colonnes prennent la moitié de l'écran, ceux s'étendant sur 4 colonnes prennent la totalité de l'écran](/assets/images/bootstrap-columns.png)
+![Les éléments s'étedant sur 6 colonnes prennent la moitié de l'écran, ceux s'étendant sur 4 colonnes prennent la totalité de l'écran](assets/images/bootstrap-columns.png)
 
 ## Gouttières
 
@@ -91,7 +87,7 @@ Créé par la société Twitter. Ex: [Centre d'assistance Twitter](https://help.
 | Extra Large | xl | >= 1200px |
 | Extra extra Large | xxl | >= 1400px | 
 
-![responsive-screens_vertical.png](/assets/images/responsive-screens_vertical.png)
+![responsive-screens_vertical.png](assets/images/responsive-screens_vertical.png)
 
 ## Colonnes adaptables
 
@@ -125,3 +121,7 @@ Et bien plus.
 - Pour les fonds: [https://getbootstrap.com/docs/5.0/utilities/background/](https://getbootstrap.com/docs/5.0/utilities/background/)
 - Pour les couleurs: [https://getbootstrap.com/docs/5.0/utilities/colors/](https://getbootstrap.com/docs/5.0/utilities/colors/)
 - Pour les espacements: [https://getbootstrap.com/docs/5.0/utilities/spacing/](https://getbootstrap.com/docs/5.0/utilities/spacing/)
+
+## Ressources
+
+Documentation officielle Bootstrap: [https://getbootstrap.com/docs/5.0/getting-started/introduction/](https://getbootstrap.com/docs/5.0/getting-started/introduction/)

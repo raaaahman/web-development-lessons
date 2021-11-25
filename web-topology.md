@@ -87,9 +87,11 @@ Boutique, merchandising
 
 </div>
 
-**Business Model:** Conversion, Abonnement, Vente de données?
+**Business Model:** Commissions, Abonnement, Vente de données?
 
 ## SaaS
+
+Software as a Service
 
 <div class="row r-stretch">
 
