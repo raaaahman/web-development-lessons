@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Javascript et le DOM</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+    <link rel="stylesheet" href="./_assets/assets/css/quiz.css" />
+    <link rel="stylesheet" href="./_assets/assets/css/slides.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+# Javascript et le DOM
+
+Sylvain Schellenberger
+</script></section><section data-markdown><script type="text/template">## DOM d'API
+
+<div class="row r-stretch">
+
+![](assets/images/javascript.png) 
+
+![](assets/images/Dom.png) <!-- .element: class="fragment" -->
+
+![](assets/images/html5.png)
+
+</div>
+
+API = **A**pplication **P**rogramming **I**nterface
+
+DOM = **D**ocument **O**bject **M**odel
+</script></section><section data-markdown><script type="text/template">## Un structure arborescente <!-- .slide: class="split-panel-50-50" -->
+
+<div class="r-stack">
+
+![](assets/images/browser-window.png) <!-- .element: class="fragment current-visible" data-fragment-index="0" -->
+
+<div class="fragment current-visible" data-fragment-index="1">
+
+```html
+<html>
+</html>
+```
+
+</div>
+
+<div class="fragment current-visible" data-fragment-index="2">
+
+```html
+<head>
+</head>
+
+<body>
+</body>
+```
+
+</div>
+
+<div class="fragment current-visible" data-fragment-index="3">
+
+```html
+<header>
+</header>
+
+<main>
+</main>
+
+<footer>
+</footer>
+```
+
+</div>
+
+<div class="fragment current-visible" data-fragment-index="4">
+
+```html
+<section id="post-content">
+</section>
+
+<section id="comments">
+</section>
+```
+
+</div>
+
+</div>
+<div class="r-stack r-stretch">
+
+![](assets/images/dom-001.png) <!-- .element class="fragment current-visible" data-fragment-index="0" -->
+
+![](assets/images/dom-002.png) <!-- .element class="fragment current-visible" data-fragment-index="1" -->
+
+![](assets/images/dom-003.png) <!-- .element class="fragment current-visible" data-fragment-index="2" -->
+
+![](assets/images/dom-004.png) <!-- .element class="fragment current-visible" data-fragment-index="3" -->
+
+![](assets/images/dom-005.png) <!-- .element class="fragment current-visible" data-fragment-index="4" -->
+
+</div>
+</script></section><section data-markdown><script type="text/template">## Sélectionner un élément par son identifiant
+
+```javascript
+const slideTitle = document.getElementById('sélectionner-un-élément')
+
+const slideTitle2 = document.querySelector('#sélectionner-un-élément')
+
+slideTitle === slideTitle2 // true
+```
+</script></section><section data-markdown><script type="text/template">## Sélectionner des éléments par leur type
+
+```javascript
+const slideTitles = document.getElementsByTagName('h2')
+```
+
+```javascript
+const slideTitles = document.querySelectorAll('h2')
+```
+
+```javascript
+slideTitles.item(0) === slideTitles[0]
+```
+</script></section><section data-markdown><script type="text/template">## Sélectionner des éléments par leur classe
+
+```javascript
+const codeBlocks = document.getElementsByClassName('code-wrapper')
+```
+
+```javascript
+const codeBlocks = document.querySelectorAll('.code-wrapper')
+```
+</script></section><section data-markdown><script type="text/template">## Sélectionner des éléments enfants
+
+```javascript
+const currentSlide = document.getElementById('slide-08')
+const currentCodeWrappers = currentSlide.getElementsByClassName('code-wrapper')
+```
+
+```javascript
+const currentCodeWrappers = document.querySelectorAll('#slide-08 pre')
+```
+</script></section><section data-markdown><script type="text/template">## Récupérer la valeur d'un attribut
+
+```javascript
+slideTitle.id
+```
+
+```javascript
+slideTitle.getAttribute('id')
+```
+</script></section><section data-markdown><script type="text/template">## Modifier les attributs d'un élément
+
+```javascript
+slideTitle.id = 'edit-attribute'
+```
+
+```javascript
+slideTitle.setAttribue('id', 'change-attribute')
+```</script></section><section data-markdown><script type="text/template">## Changer le style d'un élément
+
+```javascript
+slideTitle.style = 'color: blue;'
+```
+
+```javascript
+slideTitle.setAttribute('style', 'color: red;')
+```
+</script></section><section data-markdown><script type="text/template">## Changer la/les classe(s) d'un élément
+
+```javascript
+slideTitle.className = 'r-frame'
+```
+
+```javascript
+slideTitle.setAttribute('class', 'another-class')
+```
+
+```javascript
+slideTitle.classList.add('r-frame')
+```
+</script></section><section data-markdown><script type="text/template">## Modifier le contenu textuel d'un élément
+
+```javascript
+slideTitle.innerText = 'Bonjour tout le monde'
+```
+</script></section><section data-markdown><script type="text/template">## Modifier plusieurs éléments
+
+```javascript
+const codeWrappers = document.getElementsByClassName('code-wrapper')
+
+for (let i = 0; i < codeWrappers.length; i++) {
+	const currentWrapper = codeWrappers[i]
+	currentWrapper.classList.add('r-frame')
+}
+```
+</script></section><section data-markdown><script type="text/template">## A vous de jouer
+
+- [https://github.com/raaaahman/dom-basics/releases/tag/v1.0.0](https://github.com/raaaahman/dom-basics/releases/tag/v1.0.0) (Exercice 1)
+
+Mozilla Developers Network:
+
+- [https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model/Introduction#types_de_donn%C3%A9es_fondamentaux](https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model/Introduction#types_de_donn%C3%A9es_fondamentaux)
+- [https://developer.mozilla.org/fr/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors](https://developer.mozilla.org/fr/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Ajouter / enlever des éléments au DOM
+
+Sylvain Schellenberger
+</script></section><section data-markdown><script type="text/template">## Retirer un élément
+
+```javascript
+const slide = document.getElementsByClassName('present').item(1)
+const slideTitle = slide.getElementsByTagName('h2').item(0)
+```
+
+```javascript
+slide.removeChild(slideTitle)
+```
+
+```javascript
+slideTitle.remove()
+```
+</script></section><section data-markdown><script type="text/template">## Ajouter un élément (dernier enfant)
+
+```javascript
+const slide2 = document.getElementsByClassName('present').item(1)
+
+slide2.append(slideTitle)
+```
+</script></section><section data-markdown><script type="text/template">## Ajouter un élément (après)
+
+```javascript
+const slideTitle2 = document.getElementById('ajouter-un-élément-après')
+
+slideTitle2.after(slideTitle)
+```
+</script></section><section data-markdown><script type="text/template">## Ajouter un élément (premier enfant)
+
+```javascript
+const slide3 = document.getElementsByClassName('present').item(1)
+
+slide3.prepend(slideTitle)
+```
+</script></section><section data-markdown><script type="text/template">## Ajouter un élément (avant)
+
+```javascript
+const slideTitle3 = document.getElementById('ajouter-un-élément-avant')
+
+slideTitle3.before(slideTitle)
+```
+</script></section><section data-markdown><script type="text/template">## Créer un nouvel élément
+
+```javascript
+const newP = document.createElement('p')
+newp.innerText = 'Bonjour tout le monde!'
+```
+</script></section><section data-markdown><script type="text/template">## A vous de jouer
+
+- [https://github.com/raaaahman/dom-basics/releases/tag/v1.0.0](https://github.com/raaaahman/dom-basics/releases/tag/v1.0.0) (Exercice 2)
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Gérer les évènements
+</script></section><section data-markdown><script type="text/template">## Ecouteur d'évènement
+
+```javascript
+const slideTitle = document.getElementById('ecouteur-dévènement')
+
+// Fonction de rappel
+function onClicked() { 
+	console.log('clicked!')
+}
+	
+slideTitle.addEventListener(
+	'click', // Nom de l'événement
+	onClicked // Référence à la fonction à appeler
+)
+```
+</script></section><section data-markdown><script type="text/template">## Ecouteur d'évènement (fonction anonyme)
+
+```javascript
+document.getElementById('ecouteur-dévènement-fonction-anonyme').addEventListener(
+	'click',
+	function () {
+		console.log('clicked again!)
+	}
+)
+```</script></section><section data-markdown><script type="text/template">## L'objet Event
+
+
+
+
+
+
+</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"slide","progress":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
