@@ -4,7 +4,7 @@ date: 2021-11-15
 cover: assets/images/wordpress.png
 ---
 
-# PHP et les sites web dynamiques
+# WordPress et les sites web dynamiques
 
 Sylvain Schellenberger
 
@@ -18,7 +18,7 @@ Sylvain Schellenberger
 
 </div>
 
-- 2.5 ans Développeur pour Polylang
+- 2.5 ans Développeur pour Polylang (extension WordPress)
 
 ## Sites statiques
 
@@ -60,16 +60,16 @@ HTML + CSS (+ Javascript)
 ![Apache Httpd intercepte la requête HTTP(S)](assets/images/wordpress-inside-03.1.png)
 <!-- .element: class="fragment current-visible" data-fragment-index="1" -->
 
-![Apache Httpd envoie les informations de la requête au code PHP de WordPress.](assets/images/wordpress-inside-05.1.png)
+![Apache Httpd envoie les informations de la requête au code PHP de WordPress.](assets/images/wordpress-inside-05.2.png)
 <!-- .element: class="fragment current-visible" data-fragment-index="2"  -->
 
-![Le code MySQL / MariaDB va chercher les informations dans la base de données..](assets/images/wordpress-inside-06.1.png)
+![Le code MySQL / MariaDB va chercher les informations dans la base de données..](assets/images/wordpress-inside-06.2.png)
 <!-- .element: class="fragment current-visible" data-fragment-index="3" -->
 
-![](assets/images/wordpress-inside-07.1.png)
+![](assets/images/wordpress-inside-07.2.png)
 <!-- .element: class="fragment current-visible" data-fragment-index="4" -->
 
-![](assets/images/wordpress-inside-08.1.png)
+![](assets/images/wordpress-inside-08.2.png)
 <!-- .element: class="fragment"  data-fragment-index="5" -->
 
 </div>
@@ -78,7 +78,7 @@ HTML + CSS (+ Javascript)
 
 <div class="row r-stretch">
 
-<div class="fragment">
+<div>
 
 ![](assets/images/windows.png)
 
@@ -86,11 +86,11 @@ HTML + CSS (+ Javascript)
 
 ![](assets/images/linux.png)
 
-</div class="fragment">
+</div>
 
-![](assets/images/apache-logo.png)
+![](assets/images/apache-logo.png) <!-- .element: class="fragment" data-fragment-index="0" -->
 
-<div class="fragment">
+<div class="fragment" data-fragment-index="1">
 
 ![](assets/images/mySQL.png)
 
@@ -98,15 +98,15 @@ HTML + CSS (+ Javascript)
 
 </div>
 
-![](assets/images/php-logo.png) <!-- .element: class="fragment" -->
+![](assets/images/php-logo.png) <!-- .element: class="fragment" data-fragment-index="2" -->
 
 </div>
 
-(**W**indows / **M**acOS / **L**inux) + **A**pache + ( **M**ySQL / **M**ariaDB ) + **P**HP
+<p><span>(Windows / MacOS / Linux)</span><span class="fragment" data-fragment-index="0"> + Apache</span><span class="fragment" data-fragment-index="1"> + ( MySQL / MariaDB )</span><span class="fragment" data-fragment-index="2"> + Php</span></p>
  
 ## Apache Httpd + PHP
 
-<div class="row">
+<div class="row r-stretch">
 
 ![Journal Apache Httpd](assets/images/apache-logs.png)<!-- .element: style="max-width: 100%; max-height: 100%" -->
 
@@ -116,7 +116,7 @@ HTML + CSS (+ Javascript)
 
 ## MySQL + PHPMyAdmin
 
-<div class="row>
+<div class="row r-stretch">
 
 ![Lignes de code MySQL](assets/images/sql-file.png)<!-- .element: style="max-width: 100%; max-height: 100%" -->
 
