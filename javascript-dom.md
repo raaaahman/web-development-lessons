@@ -1,7 +1,7 @@
 ---
 title: Javascript et le DOM
 date: 2021-11-28
-cover: assets/images/Dom.png
+cover: assets/images/dom-level2-core.png
 ---
 
 # Javascript et le DOM
@@ -274,83 +274,6 @@ newp.innerText = 'Bonjour tout le monde!'
 Mozilla Developers Network:
 
 - [https://developer.mozilla.org/fr/docs/Web/API/Document_object_model/How_to_create_a_DOM_tree](https://developer.mozilla.org/fr/docs/Web/API/Document_object_model/How_to_create_a_DOM_tree)
-
----
-
-# Gérer les évènements
-
-## Ecouteur d'évènement
-
-```javascript
-const slideTitle = document.getElementById('ecouteur-dévènement')
-
-// Fonction de rappel
-function onClicked() { 
-	console.log('clicked!')
-}
-	
-slideTitle.addEventListener(
-	'click', // Nom de l'événement
-	onClicked // Référence à la fonction à appeler
-)
-```
-
-## Ecouteur d'évènement (fonction anonyme)
-
-```javascript
-document.getElementById('ecouteur-dévènement-fonction-anonyme').addEventListener(
-	'click',
-	function () {
-		console.log('clicked again!)
-	}
-)
-```
-## L'objet Event
-
-```javascript
-document.getElementById('lobjet-event').addEventListener(
-	'click',
-	function(event) {
-		console.log(event)
-	}
-)
-```
-
-## Cible de l'évènement
-
-```javascript
-document.getElementById('cible-de-lévènement').addEventListener(
-	'click',
-	function(event) {
-		console.log(event.target)
-	}
-)
-```
-
-## Enlever un écouteur d'évènement
-
-```javascript
-function (clickLogger) {
-	console.log('clicked!')
-}
-
-const slideTitle2 = document.getElementById('enlever-un-écouteur-dévènement')
-
-slideTitle2.addEventListener(
-	'click',
-	clickLogger
-)
-
-slideTitle2.removeEventListener('click', clickLogger)
-```
-
-## A vous de jouer
-
-- [https://github.com/raaaahman/dom-basics/releases/tag/v1.0.0](https://github.com/raaaahman/dom-basics/releases/tag/v1.0.0) (Exercice 3)
-
-Mozilla Developers Network:
-
-- [https://developer.mozilla.org/fr/docs/Learn/JavaScript/Building_blocks/Events](https://developer.mozilla.org/fr/docs/Learn/JavaScript/Building_blocks/Events)
 
 
 

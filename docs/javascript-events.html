@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Gestion des événements en Javascript</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+    <link rel="stylesheet" href="./_assets/assets/css/quiz.css" />
+    <link rel="stylesheet" href="./_assets/assets/css/slides.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+# Gestion des évènements en Javascript
+
+Sylvain Schellenberger
+</script></section><section data-markdown><script type="text/template">## Spécification DOM Level 2 Core
+
+<div class="r-stack r-stretch">
+
+![](assets/images/dom-level2-core.png) <!-- .element: class="fragment current-visible" -->
+
+![](assets/images/dom-level2-events.png) <!-- .element: class="fragment" -->
+
+</div>
+
+Norme W3C: [www.w3.org/TR/DOM-Level-2-Events/](https://www.w3.org/TR/DOM-Level-2-Events/)
+</script></section><section data-markdown><script type="text/template">## Processus en deux temps
+
+<div class="row r-stretch">
+	
+<div class="fragment">
+
+![Oreille](assets/images/ecouter.png)
+
+Ecouter
+
+</div>
+
+<div class="fragment">
+
+![Engrenages](assets/images/gears.png)
+
+Réagir
+
+</div>
+
+</div>
+</script></section><section data-markdown><script type="text/template">## Ecouteur d'évènement
+
+```javascript
+const slideTitle = document.getElementById('ecouteur-dévènement')
+
+// Fonction de rappel
+function onClicked() { 
+	console.log('clicked!')
+}
+	
+slideTitle.addEventListener(
+	'click', // Nom de l'événement
+	onClicked // Référence à la fonction à appeler
+)
+```
+</script></section><section data-markdown><script type="text/template">## Quelques noms d'événements
+
+- **click**: un clic de la souris
+- **keypress**: appui sur un bouton du clavier
+- **pointermove**: on bouge la souris
+- **scroll**: Défilement de la page
+- **submit**: Le formulaire a été envoyé
+
+[Listing des événements, Mozilla Developers Network](https://developer.mozilla.org/fr/docs/Web/Events#listing_des_%C3%A9v%C3%A9nements)
+</script></section><section data-markdown><script type="text/template">## Ecouteur d'évènement (fonction anonyme)
+
+```javascript
+document.getElementById('ecouteur-dévènement-fonction-anonyme').addEventListener(
+	'click',
+	function () {
+		console.log('clicked again!)
+	}
+)
+```
+</script></section><section data-markdown><script type="text/template">## L'objet Event
+
+```javascript
+document.getElementById('lobjet-event').addEventListener(
+	'click',
+	function(event) {
+		console.log(event.type)
+		console.log(event.timeStamp)
+	}
+)
+```
+
+[Référence de l'objet Event, Mozilla Developers Network](https://developer.mozilla.org/fr/docs/Web/API/Event)
+</script></section><section data-markdown><script type="text/template">## Cible de l'évènement
+
+```javascript
+document.getElementById('cible-de-lévènement').addEventListener(
+	'click',
+	function(event) {
+		console.log(event.target)
+		event.target.style.color = 'red'
+	}
+)
+```
+</script></section><section data-markdown><script type="text/template">## Bloquer le comportement par défaut
+
+<form>
+	<input type="text" name="texte">
+	<button type="submit">Envoyer</button>
+</form>
+
+```javascript
+const myForm = document.getElementsByTagName('form')[0]
+
+myForm.addEventListener(
+	'submit',
+	function (event) {
+	
+		event.preventDefault()
+		
+	}
+)
+```
+</script></section><section data-markdown><script type="text/template">## Récupérer les données du formulaire
+
+<form>
+	<input type="text" name="texte">
+	<button type="submit">Envoyer</button>
+</form>
+
+```javascript
+const myForm2 = document.getElementsByTagName('form')[0]
+
+myForm2.addEventListener( 'submit', formLogger )
+
+function formLogger(event) {
+		event.preventDefault()
+		
+		const textInput = event.target.getElementsByTagName('input')[0]
+		console.log(textInput.value)
+	}
+)
+```
+</script></section><section data-markdown><script type="text/template">## Enlever un écouteur d'évènement
+
+```javascript
+let nombre = 0
+function clickLogger() {
+	nombre++
+	console.log('cliqué ' + nombre + ' fois')
+}
+
+const slideTitle2 = document.getElementById('enlever-un-écouteur-dévènement')
+
+slideTitle2.addEventListener('click', clickLogger)
+
+slideTitle2.removeEventListener('click', clickLogger)
+```
+</script></section><section data-markdown><script type="text/template">## A vous de jouer
+
+- [https://github.com/raaaahman/dom-basics/releases/tag/v1.0.0](https://github.com/raaaahman/dom-basics/releases/tag/v1.0.0) (Exercice 3)
+
+Mozilla Developers Network:
+
+- [https://developer.mozilla.org/fr/docs/Learn/JavaScript/Building_blocks/Events](https://developer.mozilla.org/fr/docs/Learn/JavaScript/Building_blocks/Events)
+- [https://developer.mozilla.org/fr/docs/Web/Events#listing_des_événements](https://developer.mozilla.org/fr/docs/Web/Events#listing_des_%C3%A9v%C3%A9nements)
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Propagation des événements
+
+Sylvain Schellenberger
+</script></section><section data-markdown><script type="text/template">## Quelle fonction va être appelée?
+
+<div class="row">
+
+```html
+<div id="feed">
+    <h2>My Feed:</h2>
+    <div class="feed-msg">
+        <h3>Message:</h3>
+        <img src="https://i.pravatar.cc/80" class="msg-author">
+        <p class="msg-comment">Hello World!</p>
+    </div>
+</div>
+```
+
+```javascript
+document.getElementById('feed')
+.addEventListener( 'click',
+    function() { console.log('Feed') }
+)
+
+document.getElementsByClassName('feed-msg')[0]
+.addEventListener( 'click',
+    function ) { console.log('Message') }
+)
+
+document.getElementsByClassName('msg-comment')[0]
+.addEventListener( 'click',
+    function() { console.log('Comment') }
+)
+```
+
+</div>
+</script></section><section data-markdown><script type="text/template">## Phase de Bouillonnement
+
+<div class="r-stack">
+
+![](assets/images/event-propagation-01.png) <!-- .element: class="fragment current-visible" -->
+
+![](assets/images/event-propagation-02.png) <!-- .element: class="fragment current-visible" -->
+
+![](assets/images/event-propagation-03.png) <!-- .element: class="fragment current-visible" -->
+
+![](assets/images/event-propagation-04.png) <!-- .element: class="fragment current-visible" -->
+
+![](assets/images/event-propagation-05.png) <!-- .element: class="fragment current-visible" -->
+
+![](assets/images/event-propagation-06.png) <!-- .element: class="fragment current-visible" -->
+
+</div>
+</script></section><section data-markdown><script type="text/template">## Phase de Capture
+
+```javascript
+document.getElementById('feed').addEventListener( 
+	'click',
+    function() { console.log('Feed') }
+    true // Autorise la phase de capture
+)
+```
+
+Désactivé par défaut
+</script></section><section data-markdown><script type="text/template">## Capture + Bouillonnement
+
+<div class="r-stack">
+
+![](assets/images/event-propagation-04.png) <!-- .element: class="fragment current-visible" -->
+
+![](assets/images/event-propagation-09.png) <!-- .element: class="fragment current-visible" -->
+
+![](assets/images/event-propagation-10.png) <!-- .element: class="fragment current-visible" -->
+
+![](assets/images/event-propagation-11.png) <!-- .element: class="fragment current-visible" -->
+
+![](assets/images/event-propagation-12.png) <!-- .element: class="fragment current-visible" -->
+
+</div></script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"slide","progress":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

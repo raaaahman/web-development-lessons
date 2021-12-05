@@ -118,12 +118,12 @@ console.log('Hello World!')
 
 ## Ressources
 
-- Mozilla Developers NetWork, [developer.mozilla.org/fr/docs/Web/JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript)
+- Mozilla Developers NetWork, [developer.mozilla.org/fr/docs/Learn/JavaScript/First_steps](https://developer.mozilla.org/fr/docs/Learn/JavaScript/First_steps)
 - Free Code Camp, [freecodecamp.org/learn/javascript-algorithms-and-data-structures/](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
 
 ## Exercices
 
-[https://github.com/raaaahman/js-basics/releases/tag/1.0.0](https://github.com/raaaahman/js-basics/releases/tag/1.0.0)
+[https://github.com/raaaahman/js-basics/releases/](https://github.com/raaaahman/js-basics/releases/)
 
 ## Entraînement
 

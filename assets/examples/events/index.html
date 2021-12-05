@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propagation des événements</title>
+    <style>
+        #feed {
+            padding: 2rem;
+            background-color: #444;
+            border: 2px solid #333;
+        }
+
+        #feed h2 {
+            color: #eee;
+            margin-top: 0;
+        }
+
+        .feed-msg {
+            display: flex;
+            align-items: stretch;
+            flex-wrap: wrap;
+            padding: 1rem;
+            background-color: #999;
+            border: 2px solid #666;
+        }
+
+        .feed-msg h3 {
+            flex-basis: 100%;
+            flex-shrink: 0;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .msg-author {
+            display: block;
+            margin-right: 1rem;
+            background-color: #ddd;
+            border: 2px solid #bbb;
+        }
+
+        .msg-comment {
+            flex-grow: 1;
+            margin: 0;
+            padding: 0.5rem;
+            background-color: #ddd;
+            border: 2px solid #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div id="feed">
+        <h2>My Feed:</h2>
+        <div class="feed-msg">
+            <h3>Message:</h3>
+            <img src="https://i.pravatar.cc/80" class="msg-author">
+            <p class="msg-comment">Hello World!</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('feed').addEventListener(
+            'click',
+            function () {
+                console.log('Feed')
+            }
+        )
+
+        document.getElementsByClassName('feed-msg')[0].addEventListener(
+            'click',
+            function () {
+                console.log('Message')
+            }
+        )
+
+        document.getElementsByClassName('msg-comment')[0].addEventListener(
+            'click',
+            function () {
+                console.log('Comment')
+            }
+        )
+
+        document.getElementsByClassName('msg-author')[0].addEventListener(
+            'click',
+            function () {
+                console.log('Author')
+            }
+        )
+    </script>
+</body>
+</html>
