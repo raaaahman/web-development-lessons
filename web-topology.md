@@ -1,7 +1,7 @@
 ---
 title: Topologie du Web
 date: 2021-11-03
-cover:
+cover: assets/images/web-topology.png
 ---
 
 # Topologie du web
