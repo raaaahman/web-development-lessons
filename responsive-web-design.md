@@ -67,7 +67,7 @@ Liste des résolutions communes d'écrans: [https://experienceleague.adobe.com/d
 
 ```css
 img {
-	widt: 100%;
+	width: 100%;
 }
 ```
 
@@ -75,71 +75,143 @@ img {
 
 ![Les images s'adapte à leur conteneur.](assets/images/dimension-img.jpg)
 
+## Tailles de polices relatives <!-- .slide: class="split-panel-50-50" -->
+
+```css
+body {
+	/* On laisse la taille par défaut, 
+	ou celle modifiée par l'utilisateur. */
+}
+
+header {
+    font-size: 2rem;
+    /* Deux fois la taille de base. */
+    padding: 1em;
+    /* 1 fois la taille de la police */
+}
+
+footer {
+	font-size: 0.5rem;
+	/* moitié de la taille de base */
+	padding: 4em;
+	/* 4 fois la taille de la police */
+}
+```
+
+<iframe srcdoc="<head>
+<style>
+header {
+	text-align: center;
+    font-size: 2rem;
+    padding: 1em 0;
+    background-color: darkgrey;
+}
+main {
+	padding: 2em 0;
+}
+footer {
+	text-align: center;
+	font-size: 0.5rem;
+	padding: 4em 0;
+	background-color: darkgrey;
+}
+h1, p {
+	margin: 0;
+}
+</style>
+</head>
+<body>
+	<header>
+		<h1>Hello World</h1>
+		<p>And welcome to my blog.</p>
+	</header>
+	<main>
+		<p>Bla bla...</p>
+	</main>
+	<footer>
+		<p>2020-2021 &copy; Sylvain Schellenberger</p>
+	</footer>
+</body>
+">
+	
+</iframe>
+
 ## Vue adaptive (navigateur)
 
 `Menu > Plus d'outils > Outils de développement > Inspecteur > Vue adaptive`
 
 OU `Ctrl + Maj + M` (Firefox)
 
-## Media queries
+## Les requêtes médias <!-- .slide: class="split-panel-50-50" -->
 
 ```css
 @media screen and (min-width: 960px) {
 	article {
-		flex-basis: 33%;
+		displat: inline-block;
+		width: 33%;
 	}
 }
 ```
 
-Media queries, Mozilla Developers Network, [https://developer.mozilla.org/fr/docs/Web/CSS/Media_Queries/Using_media_queries](https://developer.mozilla.org/fr/docs/Web/CSS/Media_Queries/Using_media_queries)
+![](assets/images/media-query.png)
 
 ## Exemple <!-- .slide: class="split-panel-50-50" -->
 
 ```css
 /* Pour les mobiles */
 article {
-	flex-basis: 100%;
+	display: block;
+	width: 100%;
 }
 
 /* Pour les tablettes */
 @media screen and (min-width: 768px) {
 	article {
-		flex-basis: 50%;
+		display: inline-block;
+		width: 50%;
 	}
 }
 
-/* Pour les moniteurs */
+/* Pour les moniteurs de bureau */
 @media screen and (min-width: 960px) {
 	article {
-		flex-basis: 33%;
+		width: 33%;
 	}
 }
 ```
 
 ![Le même site s'adapte à différentes tailles d'écrans.](assets/images/responsive-screens_vertical.png)
 
-## Tailles de polices relatives
+## D'autres requêtes média
 
 ```css
-html {
-    font-size: 1em;
-}
-h1 {
-    font-size: 2rem;
-}
 @media screen and (min-width: 900px) {
 	h1 {
 		font-size: 4rem;
 	}
 }
-p {
-    font-size: 1rem;
+```
+
+```css
+@media print {
+	* {
+		background-color: white !important;
+		color: black !important;
+	}
 }
 ```
 
-## Ressources
+## Ressources (outils)
 
-Responsive Design, Mozilla DEvelopers Network, [https://developer.mozilla.org/fr/docs/Learn/CSS/CSS_layout/Responsive_Design](https://developer.mozilla.org/fr/docs/Learn/CSS/CSS_layout/Responsive_Design)
+- Experience mobile, Google Search Console, [search.google.com/search-console/page-experience](https://search.google.com/search-console/page-experience)
+- Test d'optimisation mobile, Google Search Console, [https://search.google.com/test/mobile-friendly/](https://search.google.com/test/mobile-friendly/)
+- Google Lighthouse, Chrome Web Store, [chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk)
+
+## Ressources (documentation)
+
+- Responsive Design, Mozilla DEvelopers Network, [https://developer.mozilla.org/fr/docs/Learn/CSS/CSS_layout/Responsive_Design](https://developer.mozilla.org/fr/docs/Learn/CSS/CSS_layout/Responsive_Design)
+- font-size, Mozilla Developers Network, [developer.mozilla.org/fr/docs/Web/CSS/font-size](https://developer.mozilla.org/fr/docs/Web/CSS/font-size)
+- Media queries, Mozilla Developers Network, [https://developer.mozilla.org/fr/docs/Web/CSS/Media_Queries/Using_media_queries](https://developer.mozilla.org/fr/docs/Web/CSS/Media_Queries/Using_media_queries)
 
 ---
 
@@ -171,28 +243,38 @@ Sylvain Schellenberger
 	<a href=google.com >Click me!</a>
 </body>"></iframe>
 
-Media queries, Mozilla Developers Network, [https://developer.mozilla.org/fr/docs/Web/CSS/Media_Queries/Using_media_queries](https://developer.mozilla.org/fr/docs/Web/CSS/Media_Queries/Using_media_queries)
+## Optimiser le chargement des images
 
-## Charger des images adaptées
+```html [|1,3|2,4]
+<img srcset="arabica-small.jpg 300w,
+				arabica.jpg 720w"
+		sizes="(min-width: 768px) 300px,
+				720px"
+		src="arabica.jpg"
+		alt="Café pur arabica">
+```
 
-```html
+- `w` = largeur réelle de l'image 
+- `px` = largeur affichée dans la page
+
+## Changer l'image selon la taille d'écran
+
+```html [|2-5|6-9|10-13]
 <picture>
   <source 
-    srcset="https://via.placeholder.com/320"
+    srcset="plan-large.jpg"
     media="(min-width: 960px)"
   />
   <source 
-    srcset="https://via.placeholder.com/384"
+    srcset="plan-3-quart.jpg"
     media="(min-width: 768px)"
   />
   <img 
-    src="https://via.placeholder.com/720" 
-    alt="My article image"
+    src="portrait.jpg" 
+    alt="Ma photo"
   />
 </picture>
 ```
-
-A guide to responsive images, CSS Ticks, [https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/#using-picture](https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/#using-picture)
 
 ## Vérifier le support par les navigateurs
 
@@ -200,5 +282,10 @@ A guide to responsive images, CSS Ticks, [https://css-tricks.com/a-guide-to-the-
 
 ## Utiliser des polyfills
 
-- Comprendre les Polyfills, la-cacade.io, [https://la-cascade.io/html5-comprendre-les-polyfills-shivs-et-shims/](https://la-cascade.io/html5-comprendre-les-polyfills-shivs-et-shims/)
+- Comprendre les Polyfills, la-cascade.io, [https://la-cascade.io/html5-comprendre-les-polyfills-shivs-et-shims/](https://la-cascade.io/html5-comprendre-les-polyfills-shivs-et-shims/)
 - Modernizr, Github, [https://github.com/Modernizr/Modernizr](https://github.com/Modernizr/Modernizr)
+
+## Ressources
+
+- Media queries, Mozilla Developers Network, [https://developer.mozilla.org/fr/docs/Web/CSS/Media_Queries/Using_media_queries](https://developer.mozilla.org/fr/docs/Web/CSS/Media_Queries/Using_media_queries)
+- Mozilla Developers Network, Images adaptives, [developer.mozilla.org/fr/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images](https://developer.mozilla.org/fr/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
